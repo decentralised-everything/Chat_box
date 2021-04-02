@@ -17,9 +17,9 @@ const addUser = ({ id, name, room }) => {
 
   const user = { id, name, room };
 
-  users.push(user);
+  users.push(user); //adding user to current array
 
-  return { user };
+  return { user }; //returning user for our use (F)
 };
 
 const removerUser = (id) => {
@@ -34,7 +34,7 @@ const removerUser = (id) => {
 const getUser = (id) => users.find((user) => user.id === id);
 //check if user id exists for our convinience
 
-const getUserInRoom = (room) => users.filter((user) => user.room === room);
+const getUsersInRoom = (room) => users.filter((user) => user.room === room);
 //check if room id exists for our convinience
 
-module.exports = { addUser, removerUser, getUser, getUserInRoom };
+module.exports = { addUser, removerUser, getUser, getUsersInRoom };
