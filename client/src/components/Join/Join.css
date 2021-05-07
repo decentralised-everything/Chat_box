@@ -19,7 +19,7 @@ body {
   text-align: center;
   height: 100vh;
   align-items: center;
-  background-color: #1a1a1d;
+  background-color: #5858e3;
 }
 
 .joinInnerContainer {
@@ -27,9 +27,9 @@ body {
 }
 
 .joinInput {
-  border-radius: 0;
   padding: 15px 20px;
   width: 100%;
+  border-color: black;
 }
 
 .heading {
@@ -43,7 +43,7 @@ body {
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  background: #2979ff;
+  background: #000000;
   padding: 20px;
   border-radius: 5px;
   display: inline-block;
