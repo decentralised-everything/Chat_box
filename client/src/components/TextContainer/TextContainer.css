@@ -5,6 +5,7 @@
   color: white;
   height: 60%;
   justify-content: space-between;
+  font-family: monospace;
 }
 
 .activeContainer {

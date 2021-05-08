@@ -16,6 +16,8 @@
   border-radius: 30px;
   height: 90%;
   width: 40%;
+  font-family: monospace;
+  font-size: 15px;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
