@@ -24,5 +24,8 @@ select:focus {
   padding: 20px;
   display: inline-block;
   border: none;
-  width: 20%;
+  width: 15%;
+}
+.sendButton:hover {
+  cursor: pointer;
 }

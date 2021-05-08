@@ -1,7 +1,7 @@
 .messageBox {
   background: #f3f3f3;
-  border-radius: 20px;
-  padding: 5px 20px;
+  border-radius: 15px;
+  padding: 0px 10px;
   color: white;
   display: inline-block;
   max-width: 80%;
@@ -11,7 +11,7 @@
   width: 100%;
   letter-spacing: 0;
   float: left;
-  font-size: 1.1em;
+  font-size: 1em;
   word-wrap: break-word;
 }
 
@@ -32,6 +32,7 @@
   font-family: Helvetica;
   color: #828282;
   letter-spacing: 0.3px;
+  font-size: 13px;
 }
 
 .pl-10 {
@@ -59,7 +60,7 @@
 }
 
 .backgroundBlue {
-  background: #2979ff;
+  background: #000000;
 }
 
 .backgroundLight {
