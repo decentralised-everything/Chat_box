@@ -1,9 +1,11 @@
 .outerContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
   height: 100vh;
-  background-color: #1a1a1d;
+  background-color: #5858e3;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .container {
