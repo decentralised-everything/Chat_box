@@ -5,10 +5,9 @@
 
 .input {
   border: none;
-  border-radius: 0;
   padding: 5%;
-  width: 80%;
-  font-size: 1.2em;
+  width: 90%;
+  font-size: 16px;
 }
 
 input:focus,
