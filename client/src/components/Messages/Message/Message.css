@@ -22,7 +22,7 @@
 .messageContainer {
   display: flex;
   justify-content: flex-end;
-  padding: 0 5%;
+  padding: 2px 5%;
   margin-top: 3px;
 }
 
