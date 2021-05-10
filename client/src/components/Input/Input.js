@@ -20,4 +20,11 @@ const Input = ({ setMessage, sendMessage, message }) => (
   </form>
 );
 
+/* 
+
+* addEmoji function for adding emoji in chats
+* isTyping function to display the name of person typing
+
+*/
+
 export default Input;
