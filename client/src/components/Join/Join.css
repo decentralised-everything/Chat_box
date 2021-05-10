@@ -50,6 +50,7 @@ body {
   display: inline-block;
   border: none;
   width: 100%;
+  transition-duration: 0.25s;
 }
 .button:hover {
   background: #5858e3;
