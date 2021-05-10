@@ -14,6 +14,7 @@ const Input = ({ setMessage, sendMessage, message }) => (
         event.key === "Enter" ? sendMessage(event) : null
       }
     />
+    <button className="emojiButton">E</button>
     <button className="sendButton" onClick={(e) => sendMessage(e)}>
       Send
     </button>

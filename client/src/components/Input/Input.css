@@ -5,7 +5,7 @@
 
 .input {
   border: none;
-  padding: 5%;
+  padding: 4%;
   width: 90%;
   font-size: 16px;
 }
@@ -28,7 +28,30 @@ select:focus {
   font-family: monospace;
   font-weight: 500;
   letter-spacing: 2px;
+  transition-duration: 0.25s;
 }
 .sendButton:hover {
   cursor: pointer;
+  background: #4a4aeae8;
+  transition-duration: 0.25s;
+}
+
+.emojiButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #000000;
+  padding: 20px;
+  display: inline-block;
+  border: none;
+  width: 5%;
+  font-family: monospace;
+  font-weight: 500;
+  letter-spacing: 2px;
+  transition-duration: 0.25s;
+}
+.emojiButton:hover {
+  cursor: pointer;
+  background: #4a4aeae8;
+  transition-duration: 0.25s;
 }
