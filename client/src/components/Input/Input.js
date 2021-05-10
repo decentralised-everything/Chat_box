@@ -1,4 +1,5 @@
 import React from "react";
+import { Editor } from "@tinymce/tinymce-react";
 
 import "./Input.css";
 
@@ -14,13 +15,26 @@ const Input = ({ setMessage, sendMessage, message }) => (
         event.key === "Enter" ? sendMessage(event) : null
       }
     />
-    <button className="emojiButton">:)</button>
+
     <button className="sendButton" onClick={(e) => sendMessage(e)}>
       Send
     </button>
   </form>
 );
 
+function App() {
+  return (
+    <Editor
+      apiKey="no-api-key"
+      init={{
+        plugins: "emoticons",
+        toolbar: "emoticons",
+        toolbar_location: "bottom",
+        menubar: true,
+      }}
+    />
+  );
+}
 /* 
 
 * addEmoji function for adding emoji in chats
@@ -28,4 +42,5 @@ const Input = ({ setMessage, sendMessage, message }) => (
 
 */
 
+export default App;
 export default Input;
