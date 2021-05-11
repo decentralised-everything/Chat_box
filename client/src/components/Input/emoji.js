@@ -77,6 +77,7 @@ module.exports = {
   ":fearful:": "😨",
   ":cold_sweat:": "😰",
   ":disappointed_relieved:": "😥",
+  ":smile_cry:": "🥲", // added on 11 may 2021 by Madhav
   ":cry:": "😢",
   ":sob:": "😭",
   ":scream:": "😱",
