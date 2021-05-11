@@ -36,23 +36,8 @@ select:focus {
   transition-duration: 0.25s;
 }
 
-.emojiButton {
-  color: #fff !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: left;
-  background: #000000;
-  padding: 20px;
-  display: inline-block;
-  border-color: black;
-  width: 10%;
-  font-family: monospace;
-  font-weight: 500;
-  letter-spacing: 2px;
-  transition-duration: 0.25s;
-}
-.emojiButton:hover {
-  cursor: pointer;
-  background: #4a4aeae8;
-  transition-duration: 0.25s;
+@media (max-width: 1200px) {
+  .sendButton {
+    font-size: 70%;
+  }
 }
