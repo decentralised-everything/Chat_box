@@ -24,6 +24,7 @@ body {
   width: 40%;
   font-family: monospace;
   font-size: 15px;
+  box-shadow: 1px 1px 20px 0px #00000047;
 }
 
 @media (max-width: 1200px) {
