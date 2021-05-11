@@ -1,5 +1,5 @@
 import React from "react";
-
+import Emojifier from "./emojify";
 import "./Input.css";
 
 const Input = ({ setMessage, sendMessage, message }) => (
@@ -9,7 +9,7 @@ const Input = ({ setMessage, sendMessage, message }) => (
       type="text"
       placeholder="Type a message..."
       value={message}
-      onChange={({ target: { value } }) => setMessage(value)}
+      onChange={({ target: { value } }) => setMessage(Emojifier(value))}
       onKeyPress={(event) =>
         event.key === "Enter" ? sendMessage(event) : null
       }
