@@ -26,3 +26,10 @@
 .onlineIcon {
   margin-right: 5%;
 }
+
+@media (max-width: 1200px) {
+  .leftInnerContainer,
+  h3 {
+    font-size: 100%;
+  }
+}

@@ -66,3 +66,9 @@
 .backgroundLight {
   background: #f3f3f3;
 }
+
+@media (max-width: 1200px) {
+  .messageText {
+    font-size: 90%;
+  }
+}
