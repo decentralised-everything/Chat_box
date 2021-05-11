@@ -1,3 +1,8 @@
+html,
+body {
+  background-color: #5858e3;
+}
+
 .outerContainer {
   display: flex;
   justify-content: space-around;
@@ -29,7 +34,7 @@
   .outerContainer {
     display: flex;
     justify-content: space-between;
-    height: 1000px;
+    height: 100%;
     background-color: #5858e3;
     flex-wrap: nowrap;
     flex-direction: column;
