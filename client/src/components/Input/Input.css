@@ -8,8 +8,10 @@
   width: 85%;
   font-size: 100%;
   margin: 5px;
+  margin-left: 10px;
   font-family: monospace;
   border-radius: 30px;
+  border-color: #00000052;
 }
 
 input:focus,
@@ -27,11 +29,10 @@ select:focus {
   border-color: black;
   width: 15%;
   font-family: monospace;
-  font-weight: 500;
-  letter-spacing: 2px;
   transition-duration: 0.25s;
   margin: 8px;
-  border-radius: 30px;
+  letter-spacing: 1px;
+  border-radius: 36px;
 }
 .sendButton:hover {
   cursor: pointer;
