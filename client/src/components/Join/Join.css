@@ -71,7 +71,7 @@ body {
   margin-top: 20px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1025px) {
   .joinOuterContainer {
     height: 100%;
   }
