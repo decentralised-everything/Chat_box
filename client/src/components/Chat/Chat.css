@@ -29,6 +29,10 @@ body {
   box-shadow: 1px 1px 20px 0px #00000047;
 }
 
+.navbar {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .container {
     width: 80%;
@@ -44,5 +48,31 @@ body {
     align-content: center;
     align-items: center;
     padding-top: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    margin-bottom: 2%;
+    border: none !important;
+  }
+  .navbar,
+  a {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 6%;
+    text-decoration: none;
+  }
+  .navbar,
+  a:hover {
+    color: black;
   }
 }

@@ -7,6 +7,11 @@ import Messages from "../Messages/Messages";
 import InfoBar from "../InfoBar/InfoBar";
 import Input from "../Input/Input";
 
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import MusicNoteTwoToneIcon from "@material-ui/icons/MusicNoteTwoTone";
+import MailSharpIcon from "@material-ui/icons/MailSharp";
+
 import "./Chat.css";
 
 const ENDPOINT = "http://localhost:5000"; // "https://genesis-chat-box.herokuapp.com/";
@@ -55,6 +60,20 @@ const Chat = ({ location }) => {
 
   return (
     <div className="outerContainer">
+      <div className="navbar">
+        <a href="https://www.youtube.com/" target="_blank">
+          <YouTubeIcon fontSize="medium" />
+        </a>
+        <a href="https://www.facebook.com/" target="_blank">
+          <FacebookIcon fontSize="medium" />
+        </a>
+        <a href="https://www.spotify.com/" target="_blank">
+          <MusicNoteTwoToneIcon fontSize="medium" />
+        </a>
+        <a href="https://mail.google.com/" target="_blank">
+          <MailSharpIcon fontSize="medium" />
+        </a>
+      </div>
       <div className="container">
         <InfoBar room={room} />
         <Messages messages={messages} name={name} />

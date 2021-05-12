@@ -1,8 +1,8 @@
 import React from "react";
 import Emojifier from "./emojify";
 import "./Input.css";
+
 import SendIcon from "@material-ui/icons/Send";
-import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
 
 const Input = ({ setMessage, sendMessage, message }) => (
   <form className="form">
