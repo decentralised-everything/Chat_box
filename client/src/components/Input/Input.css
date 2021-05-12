@@ -4,10 +4,12 @@
 }
 
 .input {
-  border: none;
-  padding: 4%;
+  padding: 2.5%;
   width: 85%;
   font-size: 100%;
+  margin: 5px;
+  font-family: monospace;
+  border-radius: 30px;
 }
 
 input:focus,
@@ -21,7 +23,6 @@ select:focus {
   text-transform: uppercase;
   text-decoration: none;
   background: #000000;
-  padding: 0%;
   display: inline-block;
   border-color: black;
   width: 15%;
@@ -29,6 +30,8 @@ select:focus {
   font-weight: 500;
   letter-spacing: 2px;
   transition-duration: 0.25s;
+  margin: 8px;
+  border-radius: 30px;
 }
 .sendButton:hover {
   cursor: pointer;
@@ -39,6 +42,7 @@ select:focus {
 @media (max-width: 1200px) {
   .sendButton {
     font-size: 70%;
+    margin: 1%;
   }
   .input {
     font-size: 80%;

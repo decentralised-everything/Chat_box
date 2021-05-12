@@ -18,8 +18,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background: #ffffff;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-radius: 31px;
   height: 90%;
   width: 40%;
   font-family: monospace;
