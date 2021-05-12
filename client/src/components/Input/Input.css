@@ -21,22 +21,20 @@ select:focus {
 }
 
 .sendButton {
-  color: #fff !important;
+  color: black;
   text-transform: uppercase;
+  background: transparent;
   text-decoration: none;
-  background: #000000;
   display: inline-block;
-  border-color: black;
-  width: 15%;
-  font-family: monospace;
+  border: none;
+  width: 10%;
   transition-duration: 0.25s;
   margin: 8px;
-  letter-spacing: 1px;
   border-radius: 36px;
 }
 .sendButton:hover {
   cursor: pointer;
-  background: #4a4aeae8;
+  color: #4a4aeae8;
   transition-duration: 0.25s;
 }
 

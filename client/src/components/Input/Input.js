@@ -1,6 +1,8 @@
 import React from "react";
 import Emojifier from "./emojify";
 import "./Input.css";
+import SendIcon from "@material-ui/icons/Send";
+import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
 
 const Input = ({ setMessage, sendMessage, message }) => (
   <form className="form">
@@ -16,7 +18,7 @@ const Input = ({ setMessage, sendMessage, message }) => (
     />
 
     <button className="sendButton" onClick={(e) => sendMessage(e)}>
-      SEND
+      <SendIcon fontSize="medium" />
     </button>
   </form>
 );
