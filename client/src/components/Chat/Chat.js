@@ -14,7 +14,7 @@ import MailSharpIcon from "@material-ui/icons/MailSharp";
 
 import "./Chat.css";
 
-const ENDPOINT = "http://localhost:5000"; // "https://genesis-chat-box.herokuapp.com/";
+const ENDPOINT = "https://genesis-chat-box.herokuapp.com/";
 
 let socket;
 
@@ -28,16 +28,20 @@ const Chat = ({ location }) => {
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
-    socket = io(ENDPOINT);
-
     setRoom(room);
     setName(name);
+
+    socket = io();
 
     socket.emit("join", { name, room }, (error) => {
       if (error) {
         alert(error);
       }
     });
+
+    return () => {
+      socket.emit("disconnect");
+    };
   }, [location.search]);
 
   useEffect(() => {
@@ -48,6 +52,11 @@ const Chat = ({ location }) => {
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
+
+    return () => {
+      socket.off("message", () => {});
+      socket.off("roomData", () => {});
+    };
   }, []);
 
   const sendMessage = (event) => {
