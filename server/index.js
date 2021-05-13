@@ -1,9 +1,3 @@
-/* 
-
-* need to find better platfomr to deploy backend, Heroku is sucking every inch of pateince left
-
-*/
-
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
@@ -75,5 +69,3 @@ io.on("connect", (socket) => {
 server.listen(process.env.PORT || 5000, () =>
   console.log(`Server has started.`)
 );
-
-//
