@@ -13,6 +13,7 @@ import MusicNoteTwoToneIcon from "@material-ui/icons/MusicNoteTwoTone";
 import MailSharpIcon from "@material-ui/icons/MailSharp";
 
 import "./Chat.css";
+import particlesBg from "./particlesBg";
 
 const ENDPOINT = "https://genesis-chat-box.herokuapp.com/";
 
@@ -69,6 +70,7 @@ const Chat = ({ location }) => {
 
   return (
     <div className="outerContainer">
+      <particlesBg />
       <div className="navbar">
         <a href="https://www.youtube.com/" target="_blank">
           <YouTubeIcon fontSize="medium" />
