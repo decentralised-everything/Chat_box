@@ -44,13 +44,13 @@ io.on("connect", (socket) => {
 
   socket.on("sendMessage", (message, callback) => {
     const user = getUser(socket.id);
-
-    io.to(user.room).emit("message", { user: user.name, text: message });
-    io.to(user.room).emit("roomData", {
-      room: user.room,
-      users: getUsersInRoom(user.room),
-    });
-
+    if (user) {
+      io.to(user.room).emit("message", { user: user.name, text: message });
+      io.to(user.room).emit("roomData", {
+        room: user.room,
+        users: getUsersInRoom(user.room),
+      });
+    }
     callback();
   });
 
