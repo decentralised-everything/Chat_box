@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Particles from "react-particles-js";
 
 import "./Join.css";
 
@@ -11,6 +12,53 @@ export default function SignIn() {
 
   return (
     <div className="joinOuterContainer">
+      <div className="particles">
+        <Particles
+          params={{
+            particles: {
+              number: {
+                value: 500,
+                density: {
+                  enable: true,
+                  value_area: 2000,
+                },
+              },
+              line_linked: {
+                enable: true,
+                opacity: 0.1,
+              },
+              move: {
+                direction: "random",
+                speed: 0.2,
+              },
+              size: {
+                value: 3,
+              },
+              opacity: {
+                anim: {
+                  enable: true,
+                  speed: 1,
+                  opacity_min: 0.05,
+                },
+              },
+            },
+            interactivity: {
+              events: {
+                onclick: {
+                  enable: true,
+                  mode: "push",
+                },
+              },
+              modes: {
+                push: {
+                  particles_nb: 1,
+                },
+              },
+            },
+            retina_detect: true,
+          }}
+        />
+      </div>
       <div className="joinInnerContainer">
         <h1 className="heading">Join</h1>
         <div>

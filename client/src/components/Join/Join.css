@@ -14,6 +14,13 @@ body {
   box-sizing: border-box;
 }
 
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+}
+
 .joinOuterContainer {
   display: flex;
   justify-content: center;
@@ -21,6 +28,8 @@ body {
   height: 100%;
   align-items: center;
   background-color: #5858e3;
+  position: relative;
+  z-index: 100;
 }
 
 .joinInnerContainer {
@@ -78,5 +87,8 @@ body {
 
   .joinInnerContainer {
     width: 80%;
+  }
+  .particles {
+    display: none;
   }
 }

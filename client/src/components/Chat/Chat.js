@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import queryString from "query-string";
 import io from "socket.io-client";
+import Particles from "react-particles-js";
 
 import TextContainer from "../TextContainer/TextContainer";
 import Messages from "../Messages/Messages";
@@ -13,7 +14,6 @@ import MusicNoteTwoToneIcon from "@material-ui/icons/MusicNoteTwoTone";
 import MailSharpIcon from "@material-ui/icons/MailSharp";
 
 import "./Chat.css";
-import particlesBg from "./particlesBg";
 
 const ENDPOINT = "https://genesis-chat-box.herokuapp.com/";
 
@@ -70,7 +70,53 @@ const Chat = ({ location }) => {
 
   return (
     <div className="outerContainer">
-      <particlesBg />
+      <div className="particles">
+        <Particles
+          params={{
+            particles: {
+              number: {
+                value: 500,
+                density: {
+                  enable: true,
+                  value_area: 2000,
+                },
+              },
+              line_linked: {
+                enable: true,
+                opacity: 0.1,
+              },
+              move: {
+                direction: "random",
+                speed: 0.2,
+              },
+              size: {
+                value: 3,
+              },
+              opacity: {
+                anim: {
+                  enable: true,
+                  speed: 1,
+                  opacity_min: 0.05,
+                },
+              },
+            },
+            interactivity: {
+              events: {
+                onclick: {
+                  enable: true,
+                  mode: "push",
+                },
+              },
+              modes: {
+                push: {
+                  particles_nb: 1,
+                },
+              },
+            },
+            retina_detect: true,
+          }}
+        />
+      </div>
       <div className="navbar">
         <a href="https://www.youtube.com/" target="_blank">
           <YouTubeIcon fontSize="medium" />
