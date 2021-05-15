@@ -6,7 +6,7 @@
   padding: 2.5%;
   width: 85%;
   font-size: 100%;
-  margin: 5px 5px 5px 10px;
+  margin: 8px 5px 8px 12px;
   font-family: monospace;
   border-radius: 30px;
   border-color: rgba(0, 0, 0, 0.3215686274509804);
@@ -24,12 +24,12 @@ select:focus {
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
-  border: none;
   width: 8%;
   transition-duration: 0.25s;
-  margin: 8px;
+  margin: 8px 8px 13px 10px;
   border-radius: 30px;
   box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 28%);
+  border-color: #00000061;
 }
 .sendButton:hover {
   cursor: pointer;
@@ -40,7 +40,10 @@ select:focus {
 @media (max-width: 1200px) {
   .sendButton {
     font-size: 70%;
-    margin: 1%;
+    margin: 0% 5% 0% 0%;
+    border: none;
+    box-shadow: none;
+    background: none;
   }
   .input {
     font-size: 80%;
