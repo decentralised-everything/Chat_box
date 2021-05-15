@@ -41,7 +41,7 @@ const Chat = ({ location }) => {
     });
 
     return () => {
-      socket.emit("disconnect");
+      socket.disconnect();
     };
   }, [location.search]);
 
@@ -118,16 +118,16 @@ const Chat = ({ location }) => {
         />
       </div>
       <div className="navbar">
-        <a href="https://www.youtube.com/" target="_blank">
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
           <YouTubeIcon fontSize="medium" />
         </a>
-        <a href="https://www.facebook.com/" target="_blank">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
           <FacebookIcon fontSize="medium" />
         </a>
-        <a href="https://www.spotify.com/" target="_blank">
+        <a href="https://www.spotify.com/" target="_blank" rel="noopener noreferrer">
           <MusicNoteTwoToneIcon fontSize="medium" />
         </a>
-        <a href="https://mail.google.com/" target="_blank">
+        <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">
           <MailSharpIcon fontSize="medium" />
         </a>
       </div>
