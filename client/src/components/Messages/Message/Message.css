@@ -5,6 +5,7 @@
   color: white;
   display: inline-block;
   max-width: 80%;
+  border-radius: 30px;
 }
 
 .messageText {
@@ -22,7 +23,7 @@
 .messageContainer {
   display: flex;
   justify-content: flex-end;
-  padding: 2px 5%;
+  padding: 2px 3%;
   margin-top: 3px;
 }
 
