@@ -1,17 +1,16 @@
 .form {
   display: flex;
-  border-top: 2px solid #d3d3d3;
 }
 
 .input {
   padding: 2.5%;
   width: 85%;
   font-size: 100%;
-  margin: 5px;
-  margin-left: 10px;
+  margin: 5px 5px 5px 10px;
   font-family: monospace;
   border-radius: 30px;
-  border-color: #00000052;
+  border-color: rgba(0, 0, 0, 0.3215686274509804);
+  box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 28%);
 }
 
 input:focus,
@@ -21,16 +20,16 @@ select:focus {
 }
 
 .sendButton {
-  color: black;
+  color: #000;
   text-transform: uppercase;
-  background: transparent;
   text-decoration: none;
   display: inline-block;
   border: none;
-  width: 10%;
+  width: 8%;
   transition-duration: 0.25s;
   margin: 8px;
-  border-radius: 36px;
+  border-radius: 30px;
+  box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 28%);
 }
 .sendButton:hover {
   cursor: pointer;

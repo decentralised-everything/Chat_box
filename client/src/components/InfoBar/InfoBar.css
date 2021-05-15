@@ -1,11 +1,11 @@
 .infoBar {
-  display: flex;
-  align-items: center;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
-  background: #000000;
+  background: #000;
   border-radius: 29px 29px 0 0;
   height: 50px;
   width: 100%;
+  box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 28%);
 }
 
 .leftInnerContainer {
