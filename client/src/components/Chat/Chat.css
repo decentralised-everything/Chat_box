@@ -15,6 +15,9 @@
   position: relative;
   z-index: 100;
 }
+.outerContainer::-webkit-scrollbar {
+  display: none;
+}
 
 .container {
   display: flex;
@@ -27,6 +30,9 @@
   font-family: monospace;
   font-size: 15px;
   box-shadow: 1px 1px 20px 0px #00000047;
+}
+.container::-webkit-scrollbar {
+  display: none;
 }
 
 .navbar {
