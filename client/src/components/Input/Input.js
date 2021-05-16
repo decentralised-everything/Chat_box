@@ -21,7 +21,7 @@ const Input = ({ setMessage, sendMessage, message }) => {
           event.key === "Enter" ? sendMessage(event) : null
         }
       />
-      <ToggleEmoji showEmoji={showEmoji} />
+      <ToggleEmoji showEmoji={showEmoji} setMessage={setMessage} />
 
       <button className="EmojiButton" onClick={() => setShowEmoji(!showEmoji)}>
         <SentimentSatisfiedSharpIcon fontSize="medium" />
@@ -32,14 +32,14 @@ const Input = ({ setMessage, sendMessage, message }) => {
     </form>
   );
 };
-const ToggleEmoji = ({ showEmoji }) => {
+const ToggleEmoji = ({ showEmoji, setMessage }) => {
   if (showEmoji) {
-    return <ListEmoji className="listEmoji" />;
+    return <ListEmoji setMessage={setMessage} className="listEmoji" />;
   }
 };
 
 // z-index = 1
-const ListEmoji = ({setMessage}) => {
+const ListEmoji = ({ setMessage }) => {
   emojiArray.map((Emoji) => {
     return (
       <button
