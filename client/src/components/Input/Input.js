@@ -39,7 +39,7 @@ const ToggleEmoji = ({ showEmoji }) => {
 };
 
 // z-index = 1
-const ListEmoji = ({setMessage}) => {
+const ListEmoji = ({ setMessage }) => {
   emojiArray.map((Emoji) => {
     return (
       <button
