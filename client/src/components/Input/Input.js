@@ -1,6 +1,8 @@
 import React from "react";
 import Emojifier from "./emojify";
+
 import "./Input.css";
+import emojiArray from "./emoji.array";
 
 import SendIcon from "@material-ui/icons/Send";
 
@@ -22,5 +24,22 @@ const Input = ({ setMessage, sendMessage, message }) => (
     </button>
   </form>
 );
+
+const addEmoji = ({ emojiArray, setMessage }) => {
+  {
+    emojiArray.map((Emoji) => {
+      return (
+        <button
+          className="emoji"
+          onClick={({ target: { value } }) =>
+            setMessage(Emojifier(value) + Emoji)
+          }
+        >
+          {Emoji}{" "}
+        </button>
+      );
+    });
+  }
+};
 
 export default Input;

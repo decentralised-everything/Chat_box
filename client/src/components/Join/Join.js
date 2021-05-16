@@ -4,8 +4,6 @@ import Particles from "react-particles-js";
 
 import "./Join.css";
 
-import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
-
 export default function SignIn() {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
