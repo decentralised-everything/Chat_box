@@ -2,10 +2,6 @@
   display: flex;
 }
 
-.emoji {
-  display: none;
-}
-
 .input {
   padding: 2.5%;
   width: 85%;
