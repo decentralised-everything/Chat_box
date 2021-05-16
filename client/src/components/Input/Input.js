@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { lazy, useState, Suspense } from "react";
 import Emojifier from "./emojify";
 
 import "./Input.css";
-import emojiArray from "./emoji.array";
 
 import SendIcon from "@material-ui/icons/Send";
 import SentimentSatisfiedSharpIcon from "@material-ui/icons/SentimentSatisfiedSharp";
+
+const ToggleEmoji = lazy(() => import("../Emoji/ToggleEmoji"));
 
 const Input = ({ setMessage, sendMessage, message }) => {
   const [showEmoji, setShowEmoji] = useState(false);
@@ -31,35 +32,23 @@ const Input = ({ setMessage, sendMessage, message }) => {
       >
         <SentimentSatisfiedSharpIcon fontSize="medium" />
       </button>
+
       <button className="sendButton" onClick={(e) => sendMessage(e)}>
         <SendIcon fontSize="medium" />
       </button>
+
       <div>
-        <div class="listEmoji">
-          <ToggleEmoji showEmoji={showEmoji} setMessage={setMessage} />
-        </div>
+        <Suspense fallback={null}>
+          <div class="listEmoji">
+            <ToggleEmoji
+              showEmoji={showEmoji}
+              setMessage={setMessage}
+              message={message}
+            />
+          </div>
+        </Suspense>
       </div>
     </form>
-  );
-};
-
-const ToggleEmoji = ({ showEmoji, setMessage }) => {
-  if (showEmoji) {
-    return <ListEmoji setMessage={setMessage} />;
-  } else return null;
-};
-
-const ListEmoji = ({ setMessage }) => {
-  return (
-    <>
-      {emojiArray.map((Emoji) => {
-        return (
-          <button className="emoji" onClick={(e) => e.preventDefault()}>
-            {Emoji}
-          </button>
-        );
-      })}
-    </>
   );
 };
 
