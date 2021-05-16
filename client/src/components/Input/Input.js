@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Emojifier from "./emojify";
 
 import "./Input.css";
 import emojiArray from "./emoji.array";
 
 import SendIcon from "@material-ui/icons/Send";
+import SentimentSatisfiedSharpIcon from '@material-ui/icons/SentimentSatisfiedSharp';
+
+const [showEmoji, setShowEmoji] = useState(false);
 
 const Input = ({ setMessage, sendMessage, message }) => (
   <form className="form">
@@ -18,15 +21,24 @@ const Input = ({ setMessage, sendMessage, message }) => (
         event.key === "Enter" ? sendMessage(event) : null
       }
     />
-
+      {
+        if(showEmoji) {
+          return (
+            <ListEmoji className="listEmoji"/>
+          );
+        }
+      }
+     <button className="EmojiButton" onClick={() => setShowEmoji(!showEmoji)}>
+      // emoji icon from material ui
+    </button>
     <button className="sendButton" onClick={(e) => sendMessage(e)}>
       <SendIcon fontSize="medium" />
     </button>
   </form>
 );
 
-const addEmoji = ({ emojiArray, setMessage }) => {
-  {
+// z-index = 1
+const ListEmoji = () => {
     emojiArray.map((Emoji) => {
       return (
         <button
@@ -39,7 +51,6 @@ const addEmoji = ({ emojiArray, setMessage }) => {
         </button>
       );
     });
-  }
 };
 
 export default Input;
