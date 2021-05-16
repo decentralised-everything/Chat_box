@@ -36,22 +36,27 @@ const ToggleEmoji = ({ showEmoji, setMessage }) => {
   if (showEmoji) {
     return <ListEmoji setMessage={setMessage} className="listEmoji" />;
   }
+  else return null;
 };
 
 // z-index = 1
 const ListEmoji = ({ setMessage }) => {
-  emojiArray.map((Emoji) => {
-    return (
-      <button
-        className="emoji"
-        onClick={({ target: { value } }) =>
-          setMessage(Emojifier(value) + Emoji)
-        }
-      >
-        {Emoji}{" "}
-      </button>
-    );
-  });
+  return (
+    <>
+      {emojiArray.map((Emoji) => {
+        return (
+          <button
+            className="emoji"
+            onClick={({ target: { value } }) =>
+              setMessage(Emojifier(value) + Emoji)
+            }
+          >
+            {Emoji}{" "}
+          </button>
+        );
+      })}
+    </>
+  );
 };
 
 export default Input;
