@@ -41,6 +41,7 @@
 }
 .emoji:hover {
   background-color: white;
+  cursor: pointer;
 }
 
 .input {
