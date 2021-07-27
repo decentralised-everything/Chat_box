@@ -25,6 +25,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [particlesAnimation, setParticlesAnimation] = useState(true);
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -68,54 +69,65 @@ const Chat = ({ location }) => {
     }
   };
 
+  const particlesHandler = ()=> {
+    if(particlesAnimation){setParticlesAnimation(false)}
+    else {setParticlesAnimation(true)}
+  }
+
+  let particlesJSX;
+
+  if(particlesAnimation){
+    particlesJSX = <Particles
+    params={{
+      particles: {
+        number: {
+          value: 500,
+          density: {
+            enable: true,
+            value_area: 2000,
+          },
+        },
+        line_linked: {
+          enable: true,
+          opacity: 0.1,
+        },
+        move: {
+          direction: "random",
+          speed: 0.2,
+        },
+        size: {
+          value: 3,
+        },
+        opacity: {
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.05,
+          },
+        },
+      },
+      interactivity: {
+        events: {
+          onclick: {
+            enable: true,
+            mode: "push",
+          },
+        },
+        modes: {
+          push: {
+            particles_nb: 1,
+          },
+        },
+      },
+      retina_detect: true,
+    }}
+  />
+  }
+
   return (
     <div className="outerContainer">
       <div className="particles">
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 500,
-                density: {
-                  enable: true,
-                  value_area: 2000,
-                },
-              },
-              line_linked: {
-                enable: true,
-                opacity: 0.1,
-              },
-              move: {
-                direction: "random",
-                speed: 0.2,
-              },
-              size: {
-                value: 3,
-              },
-              opacity: {
-                anim: {
-                  enable: true,
-                  speed: 1,
-                  opacity_min: 0.05,
-                },
-              },
-            },
-            interactivity: {
-              events: {
-                onclick: {
-                  enable: true,
-                  mode: "push",
-                },
-              },
-              modes: {
-                push: {
-                  particles_nb: 1,
-                },
-              },
-            },
-            retina_detect: true,
-          }}
-        />
+        {particlesJSX}
       </div>
       <div className="navbar">
         <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
@@ -141,6 +153,9 @@ const Chat = ({ location }) => {
         />
       </div>
       <TextContainer users={users} />
+      <button className={"button mt-20"} onKeyPress={particlesHandler}>
+            Toggle Particles
+          </button>
     </div>
   );
 };

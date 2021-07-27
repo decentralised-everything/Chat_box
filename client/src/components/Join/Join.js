@@ -7,55 +7,67 @@ import "./Join.css";
 export default function SignIn() {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
+  const [particlesAnimation, setParticlesAnimation] = useState(true);
+
+  const particlesHandler = ()=> {
+    if(particlesAnimation){setParticlesAnimation(false)}
+    else {setParticlesAnimation(true)}
+  }
+
+  let particlesJSX;
+
+  if(particlesAnimation){
+    particlesJSX = <Particles
+    params={{
+      particles: {
+        number: {
+          value: 500,
+          density: {
+            enable: true,
+            value_area: 2000,
+          },
+        },
+        line_linked: {
+          enable: true,
+          opacity: 0.1,
+        },
+        move: {
+          direction: "random",
+          speed: 0.2,
+        },
+        size: {
+          value: 3,
+        },
+        opacity: {
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.05,
+          },
+        },
+      },
+      interactivity: {
+        events: {
+          onclick: {
+            enable: true,
+            mode: "push",
+          },
+        },
+        modes: {
+          push: {
+            particles_nb: 1,
+          },
+        },
+      },
+      retina_detect: true,
+    }}
+  />
+  }
 
   return (
     <div className="joinOuterContainer">
       <div className="particles">
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 500,
-                density: {
-                  enable: true,
-                  value_area: 2000,
-                },
-              },
-              line_linked: {
-                enable: true,
-                opacity: 0.1,
-              },
-              move: {
-                direction: "random",
-                speed: 0.2,
-              },
-              size: {
-                value: 3,
-              },
-              opacity: {
-                anim: {
-                  enable: true,
-                  speed: 1,
-                  opacity_min: 0.05,
-                },
-              },
-            },
-            interactivity: {
-              events: {
-                onclick: {
-                  enable: true,
-                  mode: "push",
-                },
-              },
-              modes: {
-                push: {
-                  particles_nb: 1,
-                },
-              },
-            },
-            retina_detect: true,
-          }}
-        />
+        {particlesJSX}
       </div>
       <div className="joinInnerContainer">
         <h1 className="heading">Join</h1>
@@ -81,6 +93,9 @@ export default function SignIn() {
         >
           <button className={"button mt-20"} type="submit">
             Sign In
+          </button>
+          <button className={"button mt-20"} onKeyPress={particlesHandler}>
+            Toggle Particles
           </button>
         </Link>
       </div>
