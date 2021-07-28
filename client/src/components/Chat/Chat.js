@@ -69,77 +69,96 @@ const Chat = ({ location }) => {
     }
   };
 
-  const particlesHandler = ()=> {
-    if(particlesAnimation){setParticlesAnimation(false)}
-    else {setParticlesAnimation(true)}
-  }
+  const particlesHandler = () => {
+    if (particlesAnimation) {
+      setParticlesAnimation(false);
+    } else {
+      setParticlesAnimation(true);
+    }
+  };
 
   let particlesJSX;
 
-  if(particlesAnimation){
-    particlesJSX = <Particles
-    params={{
-      particles: {
-        number: {
-          value: 500,
-          density: {
-            enable: true,
-            value_area: 2000,
+  if (particlesAnimation) {
+    particlesJSX = (
+      <Particles
+        params={{
+          particles: {
+            number: {
+              value: 500,
+              density: {
+                enable: true,
+                value_area: 2000,
+              },
+            },
+            line_linked: {
+              enable: true,
+              opacity: 0.1,
+            },
+            move: {
+              direction: "random",
+              speed: 0.2,
+            },
+            size: {
+              value: 3,
+            },
+            opacity: {
+              anim: {
+                enable: true,
+                speed: 1,
+                opacity_min: 0.05,
+              },
+            },
           },
-        },
-        line_linked: {
-          enable: true,
-          opacity: 0.1,
-        },
-        move: {
-          direction: "random",
-          speed: 0.2,
-        },
-        size: {
-          value: 3,
-        },
-        opacity: {
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.05,
+          interactivity: {
+            events: {
+              onclick: {
+                enable: true,
+                mode: "push",
+              },
+            },
+            modes: {
+              push: {
+                particles_nb: 1,
+              },
+            },
           },
-        },
-      },
-      interactivity: {
-        events: {
-          onclick: {
-            enable: true,
-            mode: "push",
-          },
-        },
-        modes: {
-          push: {
-            particles_nb: 1,
-          },
-        },
-      },
-      retina_detect: true,
-    }}
-  />
+          retina_detect: true,
+        }}
+      />
+    );
   }
 
   return (
     <div className="outerContainer">
-      <div className="particles">
-        {particlesJSX}
-      </div>
+      <div className="particles">{particlesJSX}</div>
       <div className="navbar">
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.youtube.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <YouTubeIcon fontSize="medium" />
         </a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FacebookIcon fontSize="medium" />
         </a>
-        <a href="https://www.spotify.com/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.spotify.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <MusicNoteTwoToneIcon fontSize="medium" />
         </a>
-        <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://mail.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <MailSharpIcon fontSize="medium" />
         </a>
       </div>
@@ -153,9 +172,9 @@ const Chat = ({ location }) => {
         />
       </div>
       <TextContainer users={users} />
-      <button className={"button mt-20"} onKeyPress={particlesHandler}>
-            Toggle Particles
-          </button>
+      <button className={"toggleParticleButton"} onClick={particlesHandler}>
+        Toggle Particles
+      </button>
     </div>
   );
 };
