@@ -25,7 +25,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [particlesAnimation, setParticlesAnimation] = useState(true);
+  const [particlesAnimationChat, setParticlesAnimationChat] = useState(true);
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -69,18 +69,18 @@ const Chat = ({ location }) => {
     }
   };
 
-  const particlesHandler = () => {
-    if (particlesAnimation) {
-      setParticlesAnimation(false);
+  const particlesHandlerChat = () => {
+    if (particlesAnimationChat) {
+      setParticlesAnimationChat(false);
     } else {
-      setParticlesAnimation(true);
+      setParticlesAnimationChat(true);
     }
   };
 
-  let particlesJSX;
+  let particlesJSXChat;
 
-  if (particlesAnimation) {
-    particlesJSX = (
+  if (particlesAnimationChat) {
+    particlesJSXChat = (
       <Particles
         params={{
           particles: {
@@ -131,7 +131,7 @@ const Chat = ({ location }) => {
 
   return (
     <div className="outerContainer">
-      <div className="particles">{particlesJSX}</div>
+      <div className="particles">{particlesJSXChat}</div>
       <div className="navbar">
         <a
           href="https://www.youtube.com/"
@@ -171,10 +171,17 @@ const Chat = ({ location }) => {
           sendMessage={sendMessage}
         />
       </div>
-      <TextContainer users={users} />
-      <button className={"toggleParticleButton"} onClick={particlesHandler}>
-        Toggle Particles
-      </button>
+      <div className="rightContainer">
+        <TextContainer users={users} />
+        <div className="buttonContainer">
+          <button
+            className={"toggleParticleButtonChat"}
+            onClick={particlesHandlerChat}
+          >
+            Toggle Particles
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

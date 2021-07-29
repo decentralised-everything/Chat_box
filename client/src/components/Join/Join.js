@@ -7,20 +7,20 @@ import "./Join.css";
 export default function SignIn() {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
-  const [particlesAnimation, setParticlesAnimation] = useState(true);
+  const [particlesAnimationJoin, setParticlesAnimationJoin] = useState(true);
 
-  const particlesHandler = () => {
-    if (particlesAnimation) {
-      setParticlesAnimation(false);
+  const particlesHandlerJoin = () => {
+    if (particlesAnimationJoin) {
+      setParticlesAnimationJoin(false);
     } else {
-      setParticlesAnimation(true);
+      setParticlesAnimationJoin(true);
     }
   };
 
-  let particlesJSX;
+  let particlesJSXJoin;
 
-  if (particlesAnimation) {
-    particlesJSX = (
+  if (particlesAnimationJoin) {
+    particlesJSXJoin = (
       <Particles
         params={{
           particles: {
@@ -71,7 +71,7 @@ export default function SignIn() {
 
   return (
     <div className="joinOuterContainer">
-      <div className="particles">{particlesJSX}</div>
+      <div className="particles">{particlesJSXJoin}</div>
       <div className="joinInnerContainer">
         <h1 className="heading">Join</h1>
         <div>
@@ -97,7 +97,10 @@ export default function SignIn() {
           <button className={"button mt-20"} type="submit">
             Sign In
           </button>
-          <button className={"toggleParticleButton"} onClick={particlesHandler}>
+          <button
+            className={"toggleParticleButtonJoin"}
+            onClick={particlesHandlerJoin}
+          >
             Toggle Particles
           </button>
         </Link>
