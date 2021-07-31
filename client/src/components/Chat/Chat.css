@@ -10,9 +10,6 @@ body {
 .loading {
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* align-content: center; */
-  /* justify-content: space-around; */
   align-items: center;
   margin: 10%;
   padding: 2%;
