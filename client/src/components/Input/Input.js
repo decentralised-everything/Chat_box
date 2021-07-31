@@ -21,9 +21,14 @@ const Input = ({ setMessage, sendMessage, message }) => {
         setImgData(reader.result);
       });
       reader.readAsDataURL(e.target.files[0]);
-      setMessage(message + " " + toString(imgData));
     }
   };
+
+  const Example = ({ imgData }) => (
+    <img src={`data:image/jpeg;base64,${imgData}`} />
+  );
+
+  console.log(imgData);
 
   let files;
 
@@ -59,6 +64,7 @@ const Input = ({ setMessage, sendMessage, message }) => {
       />
 
       <div>{files}</div>
+      <Example imgData={imgData} />
 
       <button
         className="uploadButton"
