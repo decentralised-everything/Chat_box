@@ -1,3 +1,4 @@
+import React from "react";
 import emojiArray from "../Emoji/emoji.array";
 
 const ToggleEmoji = ({ showEmoji, setMessage, message }) => {
@@ -8,7 +9,7 @@ const ToggleEmoji = ({ showEmoji, setMessage, message }) => {
 
 const ListEmoji = ({ setMessage, message }) => {
   return (
-    <>
+    <div className="contents">
       {emojiArray.map((Emoji) => {
         return (
           <button
@@ -22,7 +23,7 @@ const ListEmoji = ({ setMessage, message }) => {
           </button>
         );
       })}
-    </>
+    </div>
   );
 };
 
