@@ -23,7 +23,7 @@ const Chat = ({ location }) => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState("");
-  const [message, setMessage] = useState({ text: null, image: null});
+  const [message, setMessage] = useState({ text: "", image: null});
   const [messages, setMessages] = useState([]);
   const [particlesAnimationChat, setParticlesAnimationChat] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -73,7 +73,7 @@ const Chat = ({ location }) => {
     event.preventDefault();
 
     if (message) {
-      socket.emit("sendMessage", message, () => setMessage({text: null, image: null}));
+      socket.emit("sendMessage", message, () => setMessage({text: "", image: null}));
     }
   };
 

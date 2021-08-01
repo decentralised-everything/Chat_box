@@ -89,7 +89,7 @@ const Input = ({ setMessage, sendMessage, message }) => {
                 className="sendButton"
                 onClick={(e) => {
                     sendMessage(e);
-                    setMessage({ text: null, image: null });
+                    setMessage({ text: "", image: null });
                     setFileUpload(false);
                 }}
             >
