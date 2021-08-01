@@ -15,7 +15,7 @@ import MailSharpIcon from "@material-ui/icons/MailSharp";
 
 import "./Chat.css";
 
-const ENDPOINT = "http://192.168.100.150:5000" // "https://genesis-chat-box.herokuapp.com/";
+const ENDPOINT = "http://192.168.100.150:5000"; // "https://genesis-chat-box.herokuapp.com/";
 
 let socket;
 
@@ -23,7 +23,7 @@ const Chat = ({ location }) => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState("");
-  const [message, setMessage] = useState({ text: null, image: null});
+  const [message, setMessage] = useState({ text: null, image: null });
   const [messages, setMessages] = useState([]);
   const [particlesAnimationChat, setParticlesAnimationChat] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -73,7 +73,9 @@ const Chat = ({ location }) => {
     event.preventDefault();
 
     if (message) {
-      socket.emit("sendMessage", message, () => setMessage({text: null, image: null}));
+      socket.emit("sendMessage", message, () =>
+        setMessage({ text: null, image: null })
+      );
     }
   };
 
@@ -151,28 +153,28 @@ const Chat = ({ location }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <YouTubeIcon fontSize="medium" />
+            <YouTubeIcon />
           </a>
           <a
             href="https://www.facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FacebookIcon fontSize="medium" />
+            <FacebookIcon />
           </a>
           <a
             href="https://www.spotify.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MusicNoteTwoToneIcon fontSize="medium" />
+            <MusicNoteTwoToneIcon />
           </a>
           <a
             href="https://mail.google.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MailSharpIcon fontSize="medium" />
+            <MailSharpIcon />
           </a>
         </div>
         <div className="container">
