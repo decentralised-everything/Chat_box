@@ -4,6 +4,7 @@
   color: white;
   justify-content: space-between;
   font-family: monospace;
+  margin-bottom: 5%;
 }
 
 .activeContainer {

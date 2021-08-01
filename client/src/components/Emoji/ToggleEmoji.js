@@ -16,7 +16,7 @@ const ListEmoji = ({ setMessage, message }) => {
             className="emoji"
             onClick={(e) => {
               e.preventDefault();
-              setMessage(message + Emoji);
+              setMessage({...message, text: message.text + Emoji});
             }}
           >
             {Emoji}
