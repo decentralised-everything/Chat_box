@@ -21,7 +21,6 @@ const Input = ({ setMessage, sendMessage, message }) => {
       });
       reader.readAsDataURL(e.target.files[0]);
     }
-<<<<<<< HEAD
   };
 
   const Example = ({ imgData }) =>
@@ -44,70 +43,6 @@ const Input = ({ setMessage, sendMessage, message }) => {
         />
         <img src={message.image} className="imgPreview" />
       </div>
-=======
-
-    return (
-        <form className="form">
-            <input
-                className="input"
-                type="text"
-                placeholder="Type a message..."
-                value={message.text}
-                onChange={({ target: { value } }) =>
-                    setMessage({ ...message, text: Emojifier(value) })
-                }
-                onKeyPress={(event) =>
-                    event.key === "Enter" ? sendMessage(event) : null
-                }
-            />
-
-            <div>{files}</div>
-            <Example imgData={message.image} />
-
-            <button
-                className="uploadButton"
-                onClick={(e) => {
-                    fileUploadHandler();
-                    e.preventDefault();
-                }}
-            >
-                <PublishRoundedIcon fontSize="medium" />
-            </button>
-
-            <button
-                className="EmojiButton"
-                onClick={(e) => {
-                    setShowEmoji(!showEmoji);
-                    e.preventDefault();
-                }}
-            >
-                <SentimentSatisfiedSharpIcon fontSize="medium" />
-            </button>
-
-            <button
-                className="sendButton"
-                onClick={(e) => {
-                    sendMessage(e);
-                    setMessage({ text: "", image: null });
-                    setFileUpload(false);
-                }}
-            >
-                <SendIcon fontSize="medium" />
-            </button>
-
-            <div>
-                <Suspense fallback={null}>
-                    <div class="listEmoji">
-                        <ToggleEmoji
-                            showEmoji={showEmoji}
-                            setMessage={setMessage}
-                            message={message}
-                        />
-                    </div>
-                </Suspense>
-            </div>
-        </form>
->>>>>>> 992a30e6eaaa6d209341a9de2c4f4115c994840f
     );
   }
 
@@ -153,7 +88,7 @@ const Input = ({ setMessage, sendMessage, message }) => {
         className="sendButton"
         onClick={(e) => {
           sendMessage(e);
-          setMessage({ text: null, image: null });
+          setMessage({ text: "", image: null });
           setFileUpload(false);
         }}
       >

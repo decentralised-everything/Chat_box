@@ -23,11 +23,7 @@ const Chat = ({ location }) => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState("");
-<<<<<<< HEAD
-  const [message, setMessage] = useState({ text: null, image: null });
-=======
-  const [message, setMessage] = useState({ text: "", image: null});
->>>>>>> 992a30e6eaaa6d209341a9de2c4f4115c994840f
+  const [message, setMessage] = useState({ text: "", image: null });
   const [messages, setMessages] = useState([]);
   const [particlesAnimationChat, setParticlesAnimationChat] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -77,13 +73,9 @@ const Chat = ({ location }) => {
     event.preventDefault();
 
     if (message) {
-<<<<<<< HEAD
       socket.emit("sendMessage", message, () =>
-        setMessage({ text: null, image: null })
+        setMessage({ text: "", image: null })
       );
-=======
-      socket.emit("sendMessage", message, () => setMessage({text: "", image: null}));
->>>>>>> 992a30e6eaaa6d209341a9de2c4f4115c994840f
     }
   };
 
