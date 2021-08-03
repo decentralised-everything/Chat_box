@@ -30,7 +30,7 @@ io.on("connect", (socket) => {
       user: "admin",
       data: {
 		text: `${user.name}, welcome to room ${user.room}.`,
-		image: null
+		image: ""
 	},
     });
     socket.broadcast
@@ -65,7 +65,7 @@ io.on("connect", (socket) => {
         user: "admin",
         data: {
 		text: `${user.name} has left.`,
-		image = null
+		image: "" 
 	},
       });
     }

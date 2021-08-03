@@ -8,6 +8,11 @@
   border-radius: 30px;
 }
 
+.messageBox > img {
+  max-width: 100%;
+  height: auto;
+}
+
 .messageText {
   width: 100%;
   letter-spacing: 0;
