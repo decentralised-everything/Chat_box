@@ -138,6 +138,123 @@ const Chat = ({ location }) => {
                 }}
             />
         );
+        if (message) {
+            socket.emit("sendMessage", message, () =>
+                setMessage({ text: "", image: null })
+            );
+        }
+
+        let content;
+
+        if (loading) {
+            content = <div className="loading">Loading...</div>;
+        } else {
+            content = (
+                <div className="outerContainer">
+                    <div className="particles">{particlesJSXChat}</div>
+                    <div className="navbar">
+                        <a
+                            href="https://www.youtube.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <YouTubeIcon fontSize="medium" />
+                        </a>
+                        <a
+                            href="https://www.facebook.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <FacebookIcon fontSize="medium" />
+                        </a>
+                        <a
+                            href="https://www.spotify.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <MusicNoteTwoToneIcon fontSize="medium" />
+                        </a>
+                        <a
+                            href="https://mail.google.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <MailSharpIcon fontSize="medium" />
+                        </a>
+                    </div>
+                    <div className="container">
+                        <InfoBar room={room} />
+                        <Messages messages={messages} name={name} />
+                        <Input
+                            message={message}
+                            setMessage={setMessage}
+                            sendMessage={sendMessage}
+                        />
+                    </div>
+                    <div className="rightContainer">
+                        <TextContainer users={users} />
+                        <div className="buttonContainer">
+                            <button
+                                className={"toggleParticleButtonChat"}
+                                onClick={particlesHandlerChat}
+                            >
+                                Toggle Particles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+    }
+
+    if (particlesAnimationChat) {
+        particlesJSXChat = (
+            <Particles
+                params={{
+                    particles: {
+                        number: {
+                            value: 500,
+                            density: {
+                                enable: true,
+                                value_area: 2000,
+                            },
+                        },
+                        line_linked: {
+                            enable: true,
+                            opacity: 0.1,
+                        },
+                        move: {
+                            direction: "random",
+                            speed: 0.2,
+                        },
+                        size: {
+                            value: 3,
+                        },
+                        opacity: {
+                            anim: {
+                                enable: true,
+                                speed: 1,
+                                opacity_min: 0.05,
+                            },
+                        },
+                    },
+                    interactivity: {
+                        events: {
+                            onclick: {
+                                enable: true,
+                                mode: "push",
+                            },
+                        },
+                        modes: {
+                            push: {
+                                particles_nb: 1,
+                            },
+                        },
+                    },
+                    retina_detect: true,
+                }}
+            />
+        );
     }
 
     let content;
@@ -154,28 +271,28 @@ const Chat = ({ location }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <YouTubeIcon fontSize="medium" />
+                        <YouTubeIcon />
                     </a>
                     <a
                         href="https://www.facebook.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FacebookIcon fontSize="medium" />
+                        <FacebookIcon />
                     </a>
                     <a
                         href="https://www.spotify.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <MusicNoteTwoToneIcon fontSize="medium" />
+                        <MusicNoteTwoToneIcon />
                     </a>
                     <a
                         href="https://mail.google.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <MailSharpIcon fontSize="medium" />
+                        <MailSharpIcon />
                     </a>
                 </div>
                 <div className="container">
