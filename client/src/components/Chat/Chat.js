@@ -15,7 +15,7 @@ import MailSharpIcon from "@material-ui/icons/MailSharp";
 
 import "./Chat.css";
 
-const ENDPOINT = "http://192.168.100.150:5000"; // "https://genesis-chat-box.herokuapp.com/";
+const ENDPOINT = "https://genesis-chat-box.herokuapp.com/";
 
 let socket;
 
