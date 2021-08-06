@@ -154,28 +154,28 @@ const Chat = ({ location }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <YouTubeIcon fontSize="medium" />
+                        <YouTubeIcon />
                     </a>
                     <a
                         href="https://www.facebook.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FacebookIcon fontSize="medium" />
+                        <FacebookIcon />
                     </a>
                     <a
                         href="https://www.spotify.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <MusicNoteTwoToneIcon fontSize="medium" />
+                        <MusicNoteTwoToneIcon  />
                     </a>
                     <a
                         href="https://mail.google.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <MailSharpIcon fontSize="medium" />
+                        <MailSharpIcon />
                     </a>
                 </div>
                 <div className="container">

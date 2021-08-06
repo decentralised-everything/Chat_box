@@ -23,9 +23,8 @@ const Input = ({ setMessage, sendMessage, message }) => {
         }
     };
 
-    const Example = ({ imgData }) => (
-        imgData? <img src={`data:image/jpeg;base64,${imgData}`} /> : null
-    );
+    const Example = ({ imgData }) =>
+        imgData ? <img src={`data:image/jpeg;base64,${imgData}`} /> : null;
 
     let files;
 
