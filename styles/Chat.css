@@ -1,0 +1,137 @@
+body {
+  overflow: hidden;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10%;
+  padding: 2%;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -100;
+  display: flex;
+  flex-direction: column;
+}
+
+.outerContainer {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+  z-index: 100;
+}
+.outerContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 30px;
+  height: 90%;
+  width: 45%;
+  font-family: monospace;
+  font-size: 15px;
+  box-shadow: 1px 1px 20px 0px #00000047;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.rightContainer {
+  flex-direction: column;
+}
+
+.navbar {
+  display: none;
+}
+
+.toggleParticleButtonChat {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #000000;
+  padding: 10px;
+  border-radius: 27px;
+  border-color: transparent;
+  width: 100%;
+  transition-duration: 0.25s;
+  font-size: 13px;
+  letter-spacing: 4px;
+}
+.toggleParticleButtonChat:hover {
+  background: none;
+  transition-duration: 0.25 s;
+  color: black;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 20px #0000006b;
+}
+.buttonContainer {
+  align-self: center;
+  max-width: 70%;
+  margin-top: 10%;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 80%;
+    height: 70%;
+  }
+  .outerContainer {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    padding-top: 10%;
+  }
+  .particles {
+    display: none !important;
+  }
+  .buttonContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    margin-bottom: 2%;
+    border: none !important;
+  }
+  .navbar,
+  a {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 3%;
+    text-decoration: none;
+  }
+  .navbar,
+  a:hover {
+    color: black;
+  }
+}

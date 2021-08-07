@@ -1,0 +1,36 @@
+.infoBar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  background: #000;
+  border-radius: 29px 29px 0 0;
+  height: 50px;
+  width: 100%;
+  box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 28%);
+}
+
+.LeftInnerContainer {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+  color: white;
+}
+.RightInnerContainer {
+  display: flex;
+  margin-left: 75%;
+  justify-content: flex-end;
+  display: flex;
+  flex: 0.5;
+  margin-right: 5%;
+}
+
+.onlineIcon {
+  margin-right: 5%;
+}
+
+@media (max-width: 1200px) {
+  .LeftInnerContainer,
+  h3 {
+    font-size: 100%;
+  }
+}
