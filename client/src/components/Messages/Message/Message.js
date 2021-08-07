@@ -4,18 +4,24 @@ import "./Message.css";
 
 import ReactEmoji from "react-emoji";
 
-const Message = ({ message: { data: {text, image}, user }, name }) => {
+const Message = ({
+  message: {
+    data: { image, text },
+    user,
+  },
+  name,
+}) => {
   let isSentByCurrentUser = false;
   let img = null;
   const trimmedName = name.trim().toLowerCase();
 
   if (user === trimmedName) {
     isSentByCurrentUser = true;
-  } 
+  }
 
-  if(image !== "") {
+  if (image !== "") {
     // make an image element fom a base64 string
-    img = <img src={image} />
+    img = <img src={image} />;
   }
 
   return isSentByCurrentUser ? (

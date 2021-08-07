@@ -29,13 +29,14 @@ io.on("connect", (socket) => {
     socket.emit("message", {
       user: "admin",
       data: {
-		text: `${user.name}, welcome to room ${user.room}.`,
-		image: ""
-	},
+        text: `${user.name}, welcome to room ${user.room}.`,
+        image: "",
+      },
     });
-    socket.broadcast
-      .to(user.room)
-      .emit("message", { user: "admin", data: { text:`${user.name} has joined!`, image: null }});
+    socket.broadcast.to(user.room).emit("message", {
+      user: "admin",
+      data: { text: `${user.name} has joined!`, image: null },
+    });
 
     io.to(user.room).emit("roomData", {
       room: user.room,
@@ -46,6 +47,7 @@ io.on("connect", (socket) => {
   });
 
   socket.on("sendMessage", (message, callback) => {
+    console.log(message);
     const user = getUser(socket.id);
     if (user) {
       io.to(user.room).emit("message", { user: user.name, data: message });
@@ -64,9 +66,9 @@ io.on("connect", (socket) => {
       io.to(user.room).emit("message", {
         user: "admin",
         data: {
-		text: `${user.name} has left.`,
-		image: "" 
-	},
+          text: `${user.name} has left.`,
+          image: "",
+        },
       });
     }
   });

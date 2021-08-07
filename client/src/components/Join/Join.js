@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Particles from "react-particles-js";
 
@@ -99,7 +99,10 @@ export default function SignIn() {
           </button>
           <button
             className={"toggleParticleButtonJoin"}
-            onClick={particlesHandlerJoin}
+            onClick={(e) => {
+              particlesHandlerJoin();
+              e.preventDefault();
+            }}
           >
             Toggle Particles
           </button>
