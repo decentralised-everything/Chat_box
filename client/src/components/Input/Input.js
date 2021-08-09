@@ -71,7 +71,7 @@ const Input = ({ setMessage, sendMessage, message }) => {
           e.preventDefault();
         }}
       >
-        <PublishRoundedIcon fontSize="medium" />
+        <PublishRoundedIcon />
       </button>
 
       <button
@@ -81,7 +81,7 @@ const Input = ({ setMessage, sendMessage, message }) => {
           e.preventDefault();
         }}
       >
-        <SentimentSatisfiedSharpIcon fontSize="medium" />
+        <SentimentSatisfiedSharpIcon />
       </button>
 
       <button
@@ -93,12 +93,12 @@ const Input = ({ setMessage, sendMessage, message }) => {
           e.preventDefault();
         }}
       >
-        <SendIcon fontSize="medium" />
+        <SendIcon />
       </button>
 
       <div>
         <Suspense fallback={null}>
-          <div class="listEmoji">
+          <div className="listEmoji">
             <ToggleEmoji
               showEmoji={showEmoji}
               setMessage={setMessage}

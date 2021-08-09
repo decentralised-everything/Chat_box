@@ -77,7 +77,7 @@ export default function SignIn() {
         <div>
           <input
             placeholder="Name"
-            className="joinInput"
+            className="joinInput mt-5 px-5 py-5 border rounded bg-gray-200 text-gray-700 focus:bg-white shadow-lg"
             type="text"
             onChange={(event) => setName(event.target.value)}
           />
@@ -85,7 +85,7 @@ export default function SignIn() {
         <div>
           <input
             placeholder="Room"
-            className="mt-20 joinInput"
+            className="joinInput mt-5 mb-10 px-5 py-5 border rounded bg-gray-200 text-gray-700 focus:bg-white shadow-lg"
             type="text"
             onChange={(event) => setRoom(event.target.value)}
           />
@@ -94,11 +94,18 @@ export default function SignIn() {
           onClick={(e) => (!name || !room ? e.preventDefault() : null)}
           to={`/chat?name=${name}&room=${room}`}
         >
-          <button className={"button mt-20"} type="submit">
+          <button
+            className={
+              "button bg-black hover:bg-transparent text-white border rounded shadow-md"
+            }
+            type="submit"
+          >
             Sign In
           </button>
           <button
-            className={"toggleParticleButtonJoin"}
+            className={
+              "toggleParticleButtonJoin bg-black hover:bg-transparent text-white border rounded shadow-md"
+            }
             onClick={(e) => {
               particlesHandlerJoin();
               e.preventDefault();
