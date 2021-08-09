@@ -1,23 +1,32 @@
 import React from "react";
+import Image from "next/image";
 
-import onlineIcon from "../../icons/onlineIcon.png";
-import closeIcon from "../../icons/closeIcon.png";
-
-import "../../../styles/Infobar.css";
+import styles from "../../../styles/InfoBar.module.css";
 
 const InfoBar = ({ room }) => (
-  <div className="infoBar">
-    <div className="LeftInnerContainer">
-      <img className="onlineIcon" src={onlineIcon} alt="online icon" />
-      <h3>{room}</h3>
+    <div className={styles["infoBar"]}>
+        <div className={styles["LeftInnerContainer"]}>
+            <Image
+                className={styles["onlineIcon"]}
+                src={"/icons/onlineIcon.png"}
+                alt="online icon"
+                height={5}
+                width={5}
+            />
+            <h3>{room}</h3>
 
-      <div className="RightInnerContainer">
-        <a href="/">
-          <img src={closeIcon} alt="close icon" />
-        </a>
-      </div>
+            <div className={styles["RightInnerContainer"]}>
+                <a href="/">
+                    <Image
+                        src="/icons/closeIcon.png"
+                        alt="close icon"
+                        height={10}
+                        width={10}
+                    />
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
 );
 
 export default InfoBar;

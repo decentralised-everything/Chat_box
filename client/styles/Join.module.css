@@ -1,0 +1,117 @@
+#root {
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #5858e3;
+    overflow: hidden;
+}
+
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.joinOuterContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    align-items: center;
+    background-color: #5858e3;
+    position: relative;
+    z-index: 100;
+}
+
+.joinInnerContainer {
+    width: 30%;
+}
+
+.joinInput {
+    padding: 20px 25px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 1px 1px 20px 0px #00000047;
+    font-size: 15px;
+}
+
+.heading {
+    color: white;
+    font-size: 2.5em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+    text-transform: uppercase;
+}
+
+.button {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #000000;
+    padding: 20px;
+    border-radius: 30px;
+    display: inline-block;
+    border-color: transparent;
+    width: 100%;
+    transition-duration: 0.25s;
+    font-size: 17px;
+    letter-spacing: 8px;
+}
+.button:hover {
+    background: none;
+    transition-duration: 0.25 s;
+    color: black;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 20px #0000006b;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+
+.toggleParticleButtonJoin {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #000000;
+    padding: 12px;
+    padding-right: 0;
+    border-radius: 19px;
+    border-color: transparent;
+    width: 60%;
+    transition-duration: 0.25s;
+    font-size: 14px;
+    letter-spacing: 5px;
+    margin-top: 4%;
+}
+.toggleParticleButtonJoin:hover {
+    background: none;
+    transition-duration: 0.25 s;
+    color: black;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 20px #0000006b;
+}
+
+@media (max-width: 1025px) {
+    .joinOuterContainer {
+        height: 100%;
+    }
+
+    .joinInnerContainer {
+        width: 80%;
+    }
+    .particles {
+        display: none;
+    }
+}
