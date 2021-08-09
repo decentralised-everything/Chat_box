@@ -96,24 +96,24 @@ export default function SignIn() {
         >
           <button
             className={
-              "button bg-black hover:bg-transparent text-white border rounded shadow-md"
+              "button bg-black hover:bg-transparent text-white border rounded shadow-md "
             }
             type="submit"
           >
             Sign In
           </button>
-          <button
-            className={
-              "toggleParticleButtonJoin bg-black hover:bg-transparent text-white border rounded shadow-md"
-            }
-            onClick={(e) => {
-              particlesHandlerJoin();
-              e.preventDefault();
-            }}
-          >
-            Toggle Particles
-          </button>
         </Link>
+        <button
+          className={
+            "toggleParticleButtonJoin bg-black hover:bg-transparent text-white border rounded shadow-md"
+          }
+          onClick={(e) => {
+            particlesHandlerJoin();
+            e.preventDefault();
+          }}
+        >
+          Toggle Particles
+        </button>
       </div>
     </div>
   );
