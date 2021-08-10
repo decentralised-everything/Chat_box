@@ -26,14 +26,6 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState({ text: "", image: null });
   const [messages, setMessages] = useState([]);
   const [particlesAnimationChat, setParticlesAnimationChat] = useState(true);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -142,68 +134,64 @@ const Chat = ({ location }) => {
 
   let content;
 
-  if (loading) {
-    content = <div className="loading">Loading...</div>;
-  } else {
-    content = (
-      <div className="outerContainer">
-        <div className="particles">{particlesJSXChat}</div>
-        <div className="navbar">
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+  content = (
+    <div className="outerContainer">
+      <div className="particles">{particlesJSXChat}</div>
+      <div className="navbar">
+        <a
+          href="https://www.youtube.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <YouTubeIcon />
+        </a>
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FacebookIcon />
+        </a>
+        <a
+          href="https://www.spotify.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <MusicNoteTwoToneIcon />
+        </a>
+        <a
+          href="https://mail.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <MailSharpIcon />
+        </a>
+      </div>
+      <div className="container">
+        <InfoBar room={room} />
+        <Messages messages={messages} name={name} />
+        <Input
+          message={message}
+          setMessage={setMessage}
+          sendMessage={sendMessage}
+        />
+      </div>
+      <div className="rightContainer">
+        <TextContainer users={users} />
+        <div className="buttonContainer">
+          <button
+            className={"toggleParticleButtonChat"}
+            onClick={(e) => {
+              particlesHandlerChat();
+              e.preventDefault();
+            }}
           >
-            <YouTubeIcon />
-          </a>
-          <a
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FacebookIcon />
-          </a>
-          <a
-            href="https://www.spotify.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MusicNoteTwoToneIcon />
-          </a>
-          <a
-            href="https://mail.google.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MailSharpIcon />
-          </a>
-        </div>
-        <div className="container">
-          <InfoBar room={room} />
-          <Messages messages={messages} name={name} />
-          <Input
-            message={message}
-            setMessage={setMessage}
-            sendMessage={sendMessage}
-          />
-        </div>
-        <div className="rightContainer">
-          <TextContainer users={users} />
-          <div className="buttonContainer">
-            <button
-              className={"toggleParticleButtonChat"}
-              onClick={(e) => {
-                particlesHandlerChat();
-                e.preventDefault();
-              }}
-            >
-              Toggle Particles
-            </button>
-          </div>
+            Toggle Particles
+          </button>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 
   return <div className="App">{content}</div>;
 };
