@@ -1,10 +1,8 @@
 .textContainer {
-  display: flex;
-  flex-direction: column;
   color: white;
-  justify-content: space-between;
   font-family: monospace;
-  margin-bottom: 5%;
+  margin: 1%;
+  font-size: 140%;
 }
 
 .activeContainer {

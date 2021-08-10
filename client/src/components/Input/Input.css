@@ -5,11 +5,12 @@
 
 .EmojiButton {
   border-radius: 20px;
-  height: 40px;
-  margin: 15px 0px 0px 0px;
+
   padding: 6px;
+  margin: 2%;
   transition-duration: 0.2s;
-  border-color: #00000061;
+
+  box-shadow: 0px 3px 20px 2px rgb(0 0 0 / 28%);
 }
 .EmojiButton:hover {
   cursor: pointer;
@@ -52,7 +53,7 @@
   font-family: monospace;
   border-radius: 30px;
   border-color: rgba(0, 0, 0, 0.3215686274509804);
-  box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 28%);
+  box-shadow: 0px 3px 20px 2px rgb(0 0 0 / 28%);
   z-index: 100;
 }
 
@@ -80,8 +81,7 @@ select:focus {
   margin: 2%;
   border-radius: 30px;
   transition-duration: 0.2s;
-  border-color: #00000061;
-  padding: 0px;
+  box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 28%);
 }
 .uploadButton:hover {
   cursor: pointer;
@@ -96,17 +96,16 @@ select:focus {
 }
 
 .sendButton {
-  color: #000;
   text-transform: uppercase;
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
   width: 8%;
   transition-duration: 0.2s;
-  margin: 8px 8px 13px 10px;
+  margin: 1%;
+  padding: 1%;
+  /* margin: 8px 8px 13px 10px; */
   border-radius: 30px;
-  box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 28%);
-  border-color: #00000061;
-  padding-top: 4px;
+  box-shadow: 0px 3px 20px 2px rgb(0 0 0 / 28%);
 }
 .sendButton:hover {
   cursor: pointer;

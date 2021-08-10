@@ -49,6 +49,7 @@ body {
   font-family: monospace;
   font-size: 15px;
   box-shadow: 1px 1px 20px 0px #00000047;
+  width: 50% !important;
 }
 .container::-webkit-scrollbar {
   display: none;
@@ -56,6 +57,7 @@ body {
 
 .rightContainer {
   flex-direction: column;
+  width: 20%;
 }
 
 .navbar {
@@ -68,20 +70,21 @@ body {
   text-decoration: none;
   background: #000000;
   padding: 10px;
-  border-radius: 27px;
+  border-radius: 20px;
   border-color: transparent;
   width: 100%;
   transition-duration: 0.25s;
   font-size: 13px;
+  border-width: 1px;
   letter-spacing: 4px;
 }
 .toggleParticleButtonChat:hover {
   background: none;
   transition-duration: 0.25 s;
-  color: black;
+
   border-color: white;
   border-width: 2px;
-  border-radius: 15px;
+
   box-shadow: 1px 1px 20px #0000006b;
 }
 .buttonContainer {

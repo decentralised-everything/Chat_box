@@ -3,17 +3,17 @@
   justify-content: space-between;
   background: #000;
   border-radius: 29px 29px 0 0;
-  height: 50px;
+  height: 8%;
   width: 100%;
   box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 28%);
 }
 
 .LeftInnerContainer {
-  flex: 0.5;
   display: flex;
   align-items: center;
-  margin-left: 5%;
   color: white;
+  margin: 2%;
+  justify-content: center;
 }
 .RightInnerContainer {
   display: flex;

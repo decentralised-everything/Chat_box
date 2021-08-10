@@ -1,10 +1,8 @@
 .messageBox {
-  background: #f3f3f3;
-  border-radius: 15px;
-  padding: 0px 10px;
+  padding: 2%;
   color: white;
   display: inline-block;
-  max-width: 80%;
+  max-width: 60%;
   border-radius: 30px;
 }
 
@@ -27,26 +25,18 @@
 
 .messageContainer {
   display: flex;
-  justify-content: flex-end;
-  padding: 2px 3%;
-  margin-top: 3px;
+
+  width: 90%;
+
+  margin-left: 5%;
+  margin-top: 1%;
+  align-items: center;
 }
 
 .sentText {
-  display: flex;
-  align-items: center;
   font-family: monospace;
   color: #828282;
-  letter-spacing: 0.3px;
-  font-size: 13px;
-}
-
-.pl-10 {
-  padding-left: 10px;
-}
-
-.pr-10 {
-  padding-right: 10px;
+  font-size: 90%;
 }
 
 .justifyStart {
