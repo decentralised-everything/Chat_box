@@ -64,9 +64,12 @@ const Chat = ({ location }) => {
 
   const sendMessage = (event) => {
     event.preventDefault();
-
+    const message_compressed = {
+      text: message.text,
+      image: "" // compreshon
+    }
     if (message) {
-      socket.emit("sendMessage", message, () =>
+      socket.emit("sendMessage", message_compressed, () =>
         setMessage({ text: "", image: null })
       );
     }
