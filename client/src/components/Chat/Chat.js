@@ -18,9 +18,9 @@ import "./Chat.css";
 const ENDPOINT = "http://localhost:5000"; //"https://genesis-chat-box.herokuapp.com/";
 
 let socket;
-const brotli = require("brotli");
 
 const Chat = ({ location }) => {
+  const brotli = require("brotli");
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState("");
@@ -48,7 +48,11 @@ const Chat = ({ location }) => {
   }, [location.search]);
 
   useEffect(() => {
-    socket.on("message", (message) => {
+    socket.on("message", (message_compressed) => {
+      const message = {
+        text: message_compressed.text,
+        image: brotli.decompress(message_compressed.image)
+      }
       setMessages((messages) => [...messages, message]);
     });
 
@@ -67,7 +71,7 @@ const Chat = ({ location }) => {
     event.preventDefault();
     const message_compressed = {
       text: message.text,
-      image: "", // compreshon
+      image: brotli.compress(message.image, isText = true), // compreshon
     };
     if (message) {
       socket.emit("sendMessage", message_compressed, () =>
