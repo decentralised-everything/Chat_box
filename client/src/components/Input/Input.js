@@ -18,31 +18,27 @@ const Input = ({ setMessage, sendMessage, message }) => {
     if (e.target.files[0]) {
       const reader = new FileReader();
       reader.addEventListener("load", () => {
-        resizeFile(reader.result).then(image => setMessage({ ...message, image });)
-        
+        setMessage({ ...message, image: reader.result });
       });
       reader.readAsDataURL(e.target.files[0]);
     }
   };
 
-  //
-  //
-
-  const resizeFile = (file) =>
-    new Promise((resolve) => {
-      Resizer.imageFileResizer(
-        file,
-        300,
-        300,
-        "JPEG",
-        100,
-        0,
-        (uri) => {
-          resolve(uri);
-        },
-        "base64"
-      );
-    });
+  // const resizeFile = (file) =>
+  // new Promise((resolve) => {
+  //   Resizer.imageFileResizer(
+  //     file,
+  //     300,
+  //     300,
+  //     "JPEG",
+  //     100,
+  //     0,
+  //     (uri) => {
+  //       resolve(uri);
+  //     },
+  //     "base64"
+  //   );
+  // });
 
   const Example = ({ imgData }) => (imgData ? <img src={imgData} /> : null);
 
