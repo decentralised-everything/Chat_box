@@ -18,6 +18,7 @@ import "./Chat.css";
 const ENDPOINT = "http://localhost:5000"; //"https://genesis-chat-box.herokuapp.com/";
 
 let socket;
+const brotli = require("brotli");
 
 const Chat = ({ location }) => {
   const [name, setName] = useState("");
@@ -66,8 +67,8 @@ const Chat = ({ location }) => {
     event.preventDefault();
     const message_compressed = {
       text: message.text,
-      image: "" // compreshon
-    }
+      image: "", // compreshon
+    };
     if (message) {
       socket.emit("sendMessage", message_compressed, () =>
         setMessage({ text: "", image: null })
