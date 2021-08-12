@@ -14,19 +14,6 @@ const Input = ({ setMessage, sendMessage, message }) => {
   const [showEmoji, setShowEmoji] = useState(false);
   const [fileUpload, setFileUpload] = useState(false);
 
-  const onChangePicture = (e) => {
-    if (e.target.files[0]) {
-      const reader = new FileReader();
-      reader.addEventListener("load", () => {
-        setMessage({ ...message, image: reader.result });
-      });
-      reader.readAsDataURL(e.target.files[0]);
-    }
-  };
-
-  //
-  //
-
   const resizeFile = (file) =>
     new Promise((resolve) => {
       Resizer.imageFileResizer(
@@ -43,10 +30,24 @@ const Input = ({ setMessage, sendMessage, message }) => {
       );
     });
 
-  const onChange = async (event) => {
+  const onChangePicture = (e) => {
+    if (e.target.files[0]) {
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        setMessage({ ...message, image: reader.result });
+      });
+      const file = e.target.files[0];
+      const image = resizeFile(file).then(file => reader.readAsDataURL(file)).catch(err => console.log(err));
+    }
+  };
+
+  //
+  //
+
+
+  const onChange = (event) => {
     try {
-      const file = event.target.files[0];
-      const image = await resizeFile(file);
+      
       console.log(image);
     } catch (err) {
       console.log(err);
