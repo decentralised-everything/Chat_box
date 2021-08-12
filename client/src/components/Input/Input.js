@@ -14,6 +14,20 @@ const Input = ({ setMessage, sendMessage, message }) => {
   const [showEmoji, setShowEmoji] = useState(false);
   const [fileUpload, setFileUpload] = useState(false);
 
+  const onChangePicture = (e) => {
+    if (e.target.files[0]) {
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        resizeFile(reader.result).then(image => setMessage({ ...message, image });)
+        
+      });
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  };
+
+  //
+  //
+
   const resizeFile = (file) =>
     new Promise((resolve) => {
       Resizer.imageFileResizer(
@@ -29,33 +43,6 @@ const Input = ({ setMessage, sendMessage, message }) => {
         "base64"
       );
     });
-
-  const onChangePicture = (e) => {
-    if (e.target.files[0]) {
-      const reader = new FileReader();
-      reader.addEventListener("load", () => {
-        setMessage({ ...message, image: reader.result });
-      });
-      const file = e.target.files[0];
-      const image = resizeFile(file).then(file => reader.readAsDataURL(file)).catch(err => console.log(err));
-    }
-  };
-
-  //
-  //
-
-
-  const onChange = (event) => {
-    try {
-      
-      console.log(image);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  //
-  //
 
   const Example = ({ imgData }) => (imgData ? <img src={imgData} /> : null);
 
