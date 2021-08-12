@@ -1,5 +1,6 @@
 import React, { lazy, useState, Suspense } from "react";
 import Emojifier from "./emojify";
+import Resizer from "react-image-file-resizer";
 
 import "./Input.css";
 
@@ -22,6 +23,38 @@ const Input = ({ setMessage, sendMessage, message }) => {
       reader.readAsDataURL(e.target.files[0]);
     }
   };
+
+  //
+  //
+
+  const resizeFile = (file) =>
+    new Promise((resolve) => {
+      Resizer.imageFileResizer(
+        file,
+        300,
+        300,
+        "JPEG",
+        100,
+        0,
+        (uri) => {
+          resolve(uri);
+        },
+        "base64"
+      );
+    });
+
+  const onChange = async (event) => {
+    try {
+      const file = event.target.files[0];
+      const image = await resizeFile(file);
+      console.log(image);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  //
+  //
 
   const Example = ({ imgData }) => (imgData ? <img src={imgData} /> : null);
 
