@@ -34,3 +34,9 @@
     font-size: 100%;
   }
 }
+
+@media (max-width: 1200px) {
+  .LeftInnerContainer {
+    margin: 4%;
+  }
+}

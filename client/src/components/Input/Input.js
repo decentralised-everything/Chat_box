@@ -25,25 +25,22 @@ const Input = ({ setMessage, sendMessage, message }) => {
   };
 
   // const resizeFile = (file) =>
-  // new Promise((resolve) => {
-  //   Resizer.imageFileResizer(
-  //     file,
-  //     300,
-  //     300,
-  //     "JPEG",
-  //     100,
-  //     0,
-  //     (uri) => {
-  //       resolve(uri);
-  //     },
-  //     "base64"
-  //   );
-  // });
-
-  const Example = ({ imgData }) => (imgData ? <img src={imgData} /> : null);
+  //   new Promise((resolve) => {
+  //     Resizer.imageFileResizer(
+  //       file,
+  //       300,
+  //       300,
+  //       "JPEG",
+  //       100,
+  //       0,
+  //       (uri) => {
+  //         resolve(uri);
+  //       },
+  //       "base64"
+  //     );
+  //   });
 
   let files;
-
   const fileUploadHandler = () => {
     setFileUpload(!fileUpload);
   };
@@ -51,9 +48,20 @@ const Input = ({ setMessage, sendMessage, message }) => {
   if (fileUpload) {
     files = (
       <div className="fileUpload">
+        <label for="imageFile">Choose Image</label>
+        <button
+          className="cancelButton"
+          onClick={(e) => {
+            setFileUpload(false);
+            e.preventDefault();
+            setMessage({ image: null });
+          }}
+        >
+          Cancel
+        </button>
         <input
           type="file"
-          accept="image/*"
+          accept=".jpg, .jpeg, .png"
           id="imageFile"
           onChange={onChangePicture}
         />

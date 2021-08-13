@@ -1,9 +1,9 @@
 .messageBox {
-  padding: 2%;
+  padding: 1.5%;
   color: white;
   display: inline-block;
   max-width: 60%;
-  border-radius: 30px;
+  border-radius: 12px;
 }
 
 .messageBox > img {
@@ -66,5 +66,20 @@
 @media (max-width: 1200px) {
   .messageText {
     font-size: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sentText {
+    padding-right: 3% !important;
+    padding-left: 3% !important;
+  }
+
+  .messageContainer {
+    margin-bottom: 2%;
+  }
+
+  .messageBox {
+    padding: 2.5%;
   }
 }

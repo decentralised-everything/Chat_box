@@ -1,6 +1,41 @@
+input[type="file"] {
+  display: none;
+}
+label {
+  padding: 4%;
+  margin-bottom: 10%;
+  cursor: pointer;
+  background: white;
+  border-radius: 7px;
+  box-shadow: 1px 1px 20px #0000009c;
+}
+.cancelButton {
+  padding: 4%;
+  margin-bottom: 10%;
+  cursor: pointer;
+  background: white;
+  border-radius: 7px;
+  box-shadow: 1px 1px 20px #0000009c;
+}
+.fileUpload {
+  z-index: 300;
+  position: absolute;
+  margin-left: -3%;
+  margin-top: -14%;
+  display: flex;
+  padding: 1%;
+  background: #000000e8;
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px #0000009c;
+  width: 11%;
+  flex-direction: column;
+  align-items: center;
+}
+
 .form {
   display: flex;
   z-index: 100;
+  height: 12%;
 }
 
 .EmojiButton {
@@ -15,7 +50,7 @@
 .EmojiButton:hover {
   cursor: pointer;
   color: #4a4aeae8;
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
   border-color: #4a4aeae8;
 }
 
@@ -63,19 +98,6 @@ select:focus {
   outline: none;
 }
 
-.fileUpload {
-  z-index: 300;
-  position: absolute;
-  margin: -8%;
-  display: flex;
-  padding: 1%;
-  flex-direction: row;
-  align-items: center;
-  background: black;
-  border-radius: 10px;
-  box-shadow: 1px 1px 20px black;
-}
-
 .uploadButton {
   width: 6%;
   margin: 2%;
@@ -86,7 +108,7 @@ select:focus {
 .uploadButton:hover {
   cursor: pointer;
   color: #4a4aeae8;
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
   border-color: #4a4aeae8;
 }
 
@@ -111,29 +133,38 @@ select:focus {
   cursor: pointer;
   color: #4a4aeae8;
   border-color: #4a4aeae8;
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
 }
 
 @media (max-width: 1200px) {
-  .sendButton {
-    font-size: 70%;
-    margin: 0% 5% 0% 0%;
-    border: none;
-    box-shadow: none;
-    background: none;
+  label {
+    padding: 3%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+  }
+
+  .cancelButton {
+    padding: 3%;
+    margin-bottom: 8%;
+    border-radius: 10px;
   }
 
   .uploadButton {
-    margin: 2% 3% 0% 0%;
     border: none;
-    box-shadow: none;
+    background: none;
+  }
+
+  .sendButton {
+    margin: 2% 4% 2% 1%;
+    border: none;
     background: none;
   }
 
   .fileUpload {
     overflow: hidden;
-    margin: -26%;
-    width: 50%;
+    margin-top: -20%;
+    margin-left: -10%;
+    width: 18%;
     padding: 2%;
   }
 
@@ -151,5 +182,45 @@ select:focus {
 
   .EmojiButton {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .uploadButton {
+    width: 6%;
+    margin: 4% 2% 4% 2%;
+    padding: 0% 8% 0% 0%;
+    border-radius: 30px;
+    transition-duration: 0.2s;
+    box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 28%);
+  }
+
+  .sendButton {
+    width: 6%;
+    margin: 3% 3% 3% 2%;
+    padding: 3% 9% 3% 2%;
+    border-radius: 30px;
+    transition-duration: 0.2s;
+    box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 28%);
+  }
+
+  .fileUpload {
+    overflow: hidden;
+    margin-top: -44%;
+    margin-left: -12%;
+    width: 32%;
+    padding: 2%;
+  }
+  .cancelButton {
+    padding: 2%;
+    margin-bottom: 7%;
+    border-radius: 5px;
+    font-size: 90%;
+  }
+  label {
+    padding: 3%;
+    margin-bottom: 7%;
+    border-radius: 5px;
+    font-size: 90%;
   }
 }

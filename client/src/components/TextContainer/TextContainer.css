@@ -25,10 +25,12 @@
 
 @media (max-width: 1200px) {
   .textContainer {
-    width: 70%;
-    align-items: center;
-    font-size: 10px;
-    padding-top: 10%;
-    height: 30%;
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .textContainer {
+    font-size: 100%;
   }
 }
