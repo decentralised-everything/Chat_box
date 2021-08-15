@@ -14,32 +14,30 @@ const Input = ({ setMessage, sendMessage, message }) => {
   const [showEmoji, setShowEmoji] = useState(false);
   const [fileUpload, setFileUpload] = useState(false);
 
-  const onChangePicture = (e) => {
-    if (e.target.files[0]) {
-      const reader = new FileReader();
-      reader.addEventListener("load", () => {
-        setMessage({ ...message, image: reader.result });
-      });
-      reader.readAsDataURL(e.target.files[0]);
-    }
+  ////
+  //
+  const onChangePicture = async (e) => {
+    Resizer.imageFileResizer(
+      e.target.files[0],
+      200,
+      200,
+      "JPEG",
+      80,
+      0,
+      (uri) => {
+        setMessage({ ...message, image: uri });
+        console.log(uri);
+      },
+      "base64",
+      50,
+      50
+    );
   };
+  //
+  ////
 
-  // const resizeFile = (file) =>
-  //   new Promise((resolve) => {
-  //     Resizer.imageFileResizer(
-  //       file,
-  //       300,
-  //       300,
-  //       "JPEG",
-  //       100,
-  //       0,
-  //       (uri) => {
-  //         resolve(uri);
-  //       },
-  //       "base64"
-  //     );
-  //   });
-
+  ////
+  //
   let files;
   const fileUploadHandler = () => {
     setFileUpload(!fileUpload);
@@ -69,7 +67,11 @@ const Input = ({ setMessage, sendMessage, message }) => {
       </div>
     );
   }
+  //
+  ////
 
+  ////
+  //
   return (
     <form className="form">
       <input
@@ -132,6 +134,8 @@ const Input = ({ setMessage, sendMessage, message }) => {
       </div>
     </form>
   );
+  //
+  ////
 };
 
 export default Input;
