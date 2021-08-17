@@ -36,6 +36,10 @@ body {
   display: none;
 }
 
+.navbar {
+  display: none;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -48,6 +52,7 @@ body {
   font-size: 15px;
   box-shadow: 1px 1px 20px 0px #00000047;
   width: 50% !important;
+  animation: Slide_left 2s;
 }
 .container::-webkit-scrollbar {
   display: none;
@@ -57,10 +62,7 @@ body {
   flex-direction: column;
   width: 25%;
   font-size: 110%;
-}
-
-.navbar {
-  display: none;
+  animation: Slide_up 2.5s;
 }
 
 .toggleParticleButtonChat {
@@ -90,6 +92,23 @@ body {
   align-self: center;
   max-width: 70%;
   margin-top: 10%;
+}
+
+@keyframes Slide_up {
+  0% {
+    transform: translateY(1500px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes Slide_left {
+  0% {
+    transform: translateX(2500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 1200px) {

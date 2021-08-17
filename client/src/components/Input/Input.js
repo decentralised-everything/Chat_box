@@ -19,10 +19,10 @@ const Input = ({ setMessage, sendMessage, message }) => {
   const onChangePicture = async (e) => {
     Resizer.imageFileResizer(
       e.target.files[0],
-      200,
-      200,
+      300,
+      300,
       "JPEG",
-      80,
+      100,
       0,
       (uri) => {
         setMessage({ ...message, image: uri });
@@ -52,7 +52,7 @@ const Input = ({ setMessage, sendMessage, message }) => {
           onClick={(e) => {
             setFileUpload(false);
             e.preventDefault();
-            setMessage({ image: null });
+            setMessage({ text: message.text, image: null });
           }}
         >
           Cancel

@@ -37,19 +37,20 @@ body {
   width: 30%;
 }
 
-.joinInput {
-  width: 100%;
-  border: none;
-
-  font-size: 15px;
-}
-
 .heading {
   color: white;
   font-size: 2.5em;
   padding-bottom: 10px;
   border-bottom: 2px solid white;
   text-transform: uppercase;
+  animation: Slide_up 2s ease;
+}
+
+.joinInput {
+  width: 100%;
+  border: none;
+  font-size: 15px;
+  animation: Slide_up 2.1s ease;
 }
 
 .button {
@@ -65,6 +66,7 @@ body {
   font-size: 17px;
   letter-spacing: 8px;
   border-width: 2px;
+  animation: Slide_up 2.2s ease;
 }
 .button:hover {
   background: none;
@@ -82,22 +84,30 @@ body {
   background: #000000;
   padding: 12px;
   padding-right: 0;
-
   border-color: transparent;
   width: 60%;
   transition-duration: 0.25s;
   font-size: 14px;
   letter-spacing: 5px;
   margin-top: 5%;
+  animation: Slide_up 2.3s ease;
 }
 .toggleParticleButtonJoin:hover {
   background: none;
   transition-duration: 0.25 s;
   color: black;
   border-color: white;
-
   border-radius: 15px;
   box-shadow: 1px 1px 20px #0000006b;
+}
+
+@keyframes Slide_up {
+  0% {
+    transform: translateY(1500px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1025px) {
