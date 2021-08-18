@@ -25,10 +25,10 @@ export default function SignIn() {
         params={{
           particles: {
             number: {
-              value: 500,
+              value: 1000,
               density: {
                 enable: true,
-                value_area: 2000,
+                value_area: 3000,
               },
             },
             line_linked: {

@@ -101,12 +101,14 @@ body {
   box-shadow: 1px 1px 20px #0000006b;
 }
 
-@keyframes Slide_up {
-  0% {
-    transform: translateY(1500px);
-  }
-  100% {
-    transform: translateY(0);
+@media (min-width: 1025px) {
+  @keyframes Slide_up {
+    0% {
+      transform: translateY(1500px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }
 

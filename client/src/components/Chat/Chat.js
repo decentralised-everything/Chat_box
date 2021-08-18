@@ -26,6 +26,7 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState({ text: "", image: null });
   const [messages, setMessages] = useState([]);
   const [particlesAnimationChat, setParticlesAnimationChat] = useState(true);
+  const [rightContainerState, setRightContainerState] = useState(true);
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -72,6 +73,8 @@ const Chat = ({ location }) => {
     }
   };
 
+  ////
+  //
   const particlesHandlerChat = () => {
     if (particlesAnimationChat) {
       setParticlesAnimationChat(false);
@@ -88,10 +91,10 @@ const Chat = ({ location }) => {
         params={{
           particles: {
             number: {
-              value: 500,
+              value: 1000,
               density: {
                 enable: true,
-                value_area: 2000,
+                value_area: 3000,
               },
             },
             line_linked: {
@@ -131,10 +134,76 @@ const Chat = ({ location }) => {
       />
     );
   }
+  //
+  ////
 
-  let content;
+  ////
+  //
+  const rightContainerContentHandler = () => {
+    setRightContainerState(!rightContainerState);
+  };
 
-  content = (
+  let rightContainerContent;
+
+  if (rightContainerState) {
+    rightContainerContent = (
+      <div>
+        <TextContainer users={users} />
+        <div className="buttonContainer">
+          <button
+            className={"toggleParticleButtonChat"}
+            onClick={(e) => {
+              particlesHandlerChat();
+              e.preventDefault();
+            }}
+          >
+            Toggle Particles
+          </button>
+          <button
+            className={"toggleParticleButtonChat"}
+            onClick={(e) => {
+              rightContainerContentHandler();
+              e.preventDefault();
+            }}
+          >
+            Change Content
+          </button>
+        </div>
+      </div>
+    );
+  } else {
+    rightContainerContent = (
+      <div>
+        can add some audience specific animations
+        <div className="buttonContainer">
+          <button
+            className={"toggleParticleButtonChat"}
+            onClick={(e) => {
+              particlesHandlerChat();
+              e.preventDefault();
+            }}
+          >
+            Toggle Particles
+          </button>
+          <button
+            className={"toggleParticleButtonChat"}
+            onClick={(e) => {
+              rightContainerContentHandler();
+              e.preventDefault();
+            }}
+          >
+            Change Content
+          </button>
+        </div>
+      </div>
+    );
+  }
+  //
+  ////
+
+  ////
+  //
+  return (
     <div className="outerContainer">
       <div className="particles">{particlesJSXChat}</div>
       <div className="navbar">
@@ -176,24 +245,11 @@ const Chat = ({ location }) => {
           sendMessage={sendMessage}
         />
       </div>
-      <div className="rightContainer">
-        <TextContainer users={users} />
-        <div className="buttonContainer">
-          <button
-            className={"toggleParticleButtonChat"}
-            onClick={(e) => {
-              particlesHandlerChat();
-              e.preventDefault();
-            }}
-          >
-            Toggle Particles
-          </button>
-        </div>
-      </div>
+      <div className="rightContainer">{rightContainerContent}</div>
     </div>
   );
-
-  return <div className="App">{content}</div>;
+  //
+  ////
 };
 
 export default Chat;

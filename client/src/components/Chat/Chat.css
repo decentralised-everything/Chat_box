@@ -73,11 +73,12 @@ body {
   padding: 10px;
   border-radius: 20px;
   border-color: transparent;
-  width: 80%;
+  width: 60%;
   transition-duration: 0.25s;
   font-size: 13px;
   border-width: 1px;
   letter-spacing: 4px;
+  margin: 2%;
 }
 .toggleParticleButtonChat:hover {
   background: none;
@@ -89,25 +90,30 @@ body {
   box-shadow: 1px 1px 20px #0000006b;
 }
 .buttonContainer {
-  align-self: center;
-  max-width: 70%;
-  margin-top: 10%;
+  display: flex;
+  /* align-self: center; */
+  max-width: 100%;
+  margin-top: 5%;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes Slide_up {
-  0% {
-    transform: translateY(1500px);
+@media (min-width: 1025px) {
+  @keyframes Slide_up {
+    0% {
+      transform: translateY(1500px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes Slide_left {
-  0% {
-    transform: translateX(2500px);
-  }
-  100% {
-    transform: translateX(0);
+  @keyframes Slide_left {
+    0% {
+      transform: translateX(2500px);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 }
 
