@@ -50,9 +50,11 @@ const Input = ({ setMessage, sendMessage, message }) => {
         <button
           className="cancelButton"
           onClick={(e) => {
+            ////
             setFileUpload(false);
             e.preventDefault();
             setMessage({ text: message.text, image: null });
+            ////
           }}
         >
           Cancel
@@ -92,8 +94,11 @@ const Input = ({ setMessage, sendMessage, message }) => {
       <button
         className="uploadButton"
         onClick={(e) => {
+          ////
           fileUploadHandler();
+          setShowEmoji(false);
           e.preventDefault();
+          ////
         }}
       >
         <PublishRoundedIcon />
@@ -102,8 +107,11 @@ const Input = ({ setMessage, sendMessage, message }) => {
       <button
         className="EmojiButton"
         onClick={(e) => {
+          ////
           setShowEmoji(!showEmoji);
+          setFileUpload(false);
           e.preventDefault();
+          ////
         }}
       >
         <SentimentSatisfiedSharpIcon />
@@ -112,10 +120,18 @@ const Input = ({ setMessage, sendMessage, message }) => {
       <button
         className="sendButton"
         onClick={(e) => {
-          sendMessage(e);
+          ////
+          if (message.text == "" && message.image == null) {
+            console.log("Empty message");
+          } else {
+            sendMessage(e);
+          }
+          ////
           setMessage({ text: "", image: null });
           setFileUpload(false);
+          setShowEmoji(false);
           e.preventDefault();
+          ////
         }}
       >
         <SendIcon />

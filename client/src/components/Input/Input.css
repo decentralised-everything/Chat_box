@@ -1,14 +1,30 @@
+.input {
+  padding: 2.5%;
+  width: 85%;
+  font-size: 100%;
+  margin: 8px 5px 8px 12px;
+  font-family: monospace;
+  border-radius: 30px;
+  border-color: rgba(0, 0, 0, 0.3215686274509804);
+  box-shadow: 0px 3px 20px 2px rgb(0 0 0 / 28%);
+  z-index: 100;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
 input[type="file"] {
   display: none;
 }
-
 label {
   padding: 4%;
   margin-bottom: 10%;
   cursor: pointer;
   background: white;
   border-radius: 7px;
-  box-shadow: 1px 1px 20px #0000009c;
+  box-shadow: 1px 1px 10px #0000009c;
 }
 label:hover {
   cursor: pointer;
@@ -50,6 +66,12 @@ label:hover {
   align-items: center;
 }
 
+.form {
+  display: flex;
+  z-index: 100;
+  height: 12%;
+}
+
 .imgPreview {
   height: 40%;
   width: auto;
@@ -62,19 +84,11 @@ label:hover {
   transition-duration: 0.2s;
 }
 
-.form {
-  display: flex;
-  z-index: 100;
-  height: 12%;
-}
-
 .EmojiButton {
   border-radius: 20px;
-
   padding: 6px;
   margin: 2%;
   transition-duration: 0.2s;
-
   box-shadow: 0px 3px 20px 2px rgb(0 0 0 / 28%);
 }
 .EmojiButton:hover {
@@ -93,6 +107,7 @@ label:hover {
   height: 20%;
   margin: -70px 0px 0px 4px;
   z-index: 200;
+  border-radius: 12px;
 }
 .listEmoji::-webkit-scrollbar {
   display: none;
@@ -108,24 +123,6 @@ label:hover {
 .emoji:hover {
   background-color: white;
   cursor: pointer;
-}
-
-.input {
-  padding: 2.5%;
-  width: 85%;
-  font-size: 100%;
-  margin: 8px 5px 8px 12px;
-  font-family: monospace;
-  border-radius: 30px;
-  border-color: rgba(0, 0, 0, 0.3215686274509804);
-  box-shadow: 0px 3px 20px 2px rgb(0 0 0 / 28%);
-  z-index: 100;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
 }
 
 .uploadButton {
