@@ -15,7 +15,7 @@ import MailSharpIcon from "@material-ui/icons/MailSharp";
 
 import "./Chat.css";
 
-const ENDPOINT = "https://genesis-chat-box.herokuapp.com/";
+const ENDPOINT = "http://localhost:5000";
 
 let socket;
 
@@ -26,7 +26,6 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState({ text: "", image: null });
   const [messages, setMessages] = useState([]);
   const [particlesAnimationChat, setParticlesAnimationChat] = useState(true);
-  const [rightContainerState, setRightContainerState] = useState(true);
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -91,7 +90,7 @@ const Chat = ({ location }) => {
         params={{
           particles: {
             number: {
-              value: 1000,
+              value: 700,
               density: {
                 enable: true,
                 value_area: 3000,
@@ -139,30 +138,26 @@ const Chat = ({ location }) => {
 
   ////
   //
-  const rightContainerContentHandler = () => {
-    setRightContainerState(!rightContainerState);
-  };
 
   let rightContainerContent;
 
-  if (rightContainerState) {
-    rightContainerContent = (
-      <div>
-        <TextContainer users={users} />
-        <div className="buttonContainer">
-          <button
-            className={"toggleParticleButtonChat"}
-            onClick={(e) => {
-              particlesHandlerChat();
-              e.preventDefault();
-            }}
-          >
-            Toggle Particles
-          </button>
-        </div>
+  rightContainerContent = (
+    <div>
+      <TextContainer users={users} />
+      <div className="buttonContainer">
+        <button
+          className={"toggleParticleButtonChat"}
+          onClick={(e) => {
+            particlesHandlerChat();
+            e.preventDefault();
+          }}
+        >
+          Toggle Particles
+        </button>
       </div>
-    );
-  }
+    </div>
+  );
+
   //
   ////
 

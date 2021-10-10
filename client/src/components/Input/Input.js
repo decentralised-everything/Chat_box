@@ -26,11 +26,10 @@ const Input = ({ setMessage, sendMessage, message }) => {
       0,
       (uri) => {
         setMessage({ ...message, image: uri });
-        console.log(uri);
       },
       "base64",
-      50,
-      50
+      100,
+      100
     );
   };
   //
