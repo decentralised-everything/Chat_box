@@ -2,26 +2,15 @@ body {
   overflow: hidden;
 }
 
-.App {
-  height: 100vh;
-  width: 100%;
-}
-
-.loading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10%;
-  padding: 2%;
-}
-
 .particles {
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: -100;
-  display: flex;
-  flex-direction: column;
+}
+
+.navbar {
+  display: none;
 }
 
 .outerContainer {
@@ -49,6 +38,8 @@ body {
   font-family: monospace;
   font-size: 15px;
   box-shadow: 1px 1px 20px 0px #00000047;
+  width: 50% !important;
+  animation: Slide_left 2s;
 }
 .container::-webkit-scrollbar {
   display: none;
@@ -56,10 +47,18 @@ body {
 
 .rightContainer {
   flex-direction: column;
+  width: 25%;
+  font-size: 110%;
+  animation: Slide_up 2.5s;
 }
 
-.navbar {
-  display: none;
+.buttonContainer {
+  display: flex;
+  /* align-self: center; */
+  max-width: 100%;
+  margin-top: 5%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .toggleParticleButtonChat {
@@ -68,26 +67,42 @@ body {
   text-decoration: none;
   background: #000000;
   padding: 10px;
-  border-radius: 27px;
+  border-radius: 20px;
   border-color: transparent;
-  width: 100%;
+  width: 60%;
   transition-duration: 0.25s;
   font-size: 13px;
+  border-width: 1px;
   letter-spacing: 4px;
+  margin: 2%;
 }
 .toggleParticleButtonChat:hover {
   background: none;
   transition-duration: 0.25 s;
-  color: black;
+
   border-color: white;
   border-width: 2px;
-  border-radius: 15px;
+
   box-shadow: 1px 1px 20px #0000006b;
 }
-.buttonContainer {
-  align-self: center;
-  max-width: 70%;
-  margin-top: 10%;
+
+@media (min-width: 1025px) {
+  @keyframes Slide_up {
+    0% {
+      transform: translateY(1500px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes Slide_left {
+    0% {
+      transform: translateX(2500px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 }
 
 @media (max-width: 1200px) {
@@ -95,43 +110,55 @@ body {
     width: 80%;
     height: 70%;
   }
+
   .outerContainer {
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    align-content: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-around;
     align-items: center;
-    padding-top: 10%;
+    /* padding-top: 10%; */
+    flex-direction: column;
   }
+
   .particles {
     display: none !important;
   }
+
   .buttonContainer {
     display: none;
   }
+
+  .rightContainer {
+    width: 25%;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 800px) {
+  .container {
+    width: 80% !important;
+  }
+
   .navbar {
-    margin-bottom: 2%;
     border: none !important;
   }
   .navbar,
   a {
-    color: white;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
     background: transparent;
     margin-left: 10%;
     margin-right: 10%;
     padding: 3%;
     text-decoration: none;
+    justify-content: center;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
   }
   .navbar,
   a:hover {
     color: black;
+  }
+
+  .rightContainer {
+    width: 60%;
   }
 }

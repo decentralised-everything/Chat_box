@@ -1,21 +1,101 @@
+.input {
+  padding: 2.5%;
+  width: 85%;
+  font-size: 100%;
+  margin: 8px 5px 8px 12px;
+  font-family: monospace;
+  border-radius: 30px;
+  border-color: rgba(0, 0, 0, 0.3215686274509804);
+  box-shadow: 0px 3px 20px 2px rgb(0 0 0 / 28%);
+  z-index: 100;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+label {
+  padding: 4%;
+  margin-bottom: 10%;
+  cursor: pointer;
+  background: white;
+  border-radius: 7px;
+  box-shadow: 1px 1px 10px #0000009c;
+}
+label:hover {
+  cursor: pointer;
+  background-color: #5454f3e8;
+  transition-duration: 0.2s;
+  color: white;
+  box-shadow: 1px 1px 10px #5454f3cc;
+}
+
+.cancelButton {
+  padding: 4%;
+  margin-bottom: 10%;
+  cursor: pointer;
+  background: white;
+  border-radius: 7px;
+  box-shadow: 1px 1px 20px #0000009c;
+}
+.cancelButton:hover {
+  cursor: pointer;
+  background-color: #5454f3e8;
+  transition-duration: 0.2s;
+  color: white;
+  box-shadow: 1px 1px 10px #5454f3cc;
+}
+
+.fileUpload {
+  z-index: 300;
+  position: absolute;
+  margin-left: -3%;
+  margin-top: -14%;
+  display: flex;
+  padding: 1%;
+  background: #000000e8;
+  border-radius: 10px;
+  box-shadow: 0px -2px 20px 3px #0000009c;
+  width: 11%;
+  height: 30%;
+  flex-direction: column;
+  align-items: center;
+}
+
 .form {
   display: flex;
   z-index: 100;
+  height: 12%;
+}
+
+.imgPreview {
+  height: 40%;
+  width: auto;
+  transition-duration: 0.2s;
+}
+.imgPreview:hover {
+  box-shadow: 0px 1px 10px 5px #000000;
+  height: 50%;
+  width: auto;
+  transition-duration: 0.2s;
 }
 
 .EmojiButton {
   border-radius: 20px;
-  height: 40px;
-  margin: 15px 0px 0px 0px;
   padding: 6px;
+  margin: 2%;
   transition-duration: 0.2s;
-  border-color: #00000061;
+  box-shadow: 0px 3px 20px 2px rgb(0 0 0 / 28%);
 }
 .EmojiButton:hover {
   cursor: pointer;
   color: #4a4aeae8;
-  transition-duration: 0.2s;
-  border-color: #4a4aeae8;
+  transition-duration: 0.1s;
+  box-shadow: 0px 0px 10px #5454f3e8;
 }
 
 .listEmoji {
@@ -27,6 +107,7 @@
   height: 20%;
   margin: -70px 0px 0px 4px;
   z-index: 200;
+  border-radius: 12px;
 }
 .listEmoji::-webkit-scrollbar {
   display: none;
@@ -44,97 +125,68 @@
   cursor: pointer;
 }
 
-.input {
-  padding: 2.5%;
-  width: 85%;
-  font-size: 100%;
-  margin: 8px 5px 8px 12px;
-  font-family: monospace;
-  border-radius: 30px;
-  border-color: rgba(0, 0, 0, 0.3215686274509804);
-  box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 28%);
-  z-index: 100;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-}
-
-.fileUpload {
-  z-index: 300;
-  position: absolute;
-  margin: -8%;
-  display: flex;
-  padding: 1%;
-  flex-direction: row;
-  align-items: center;
-  background: black;
-  border-radius: 10px;
-  box-shadow: 1px 1px 20px black;
-}
-
 .uploadButton {
   width: 6%;
   margin: 2%;
   border-radius: 30px;
   transition-duration: 0.2s;
-  border-color: #00000061;
-  padding: 0px;
+  box-shadow: 0px 3px 20px 2px rgb(0 0 0 / 28%);
 }
 .uploadButton:hover {
   cursor: pointer;
   color: #4a4aeae8;
-  transition-duration: 0.2s;
-  border-color: #4a4aeae8;
-}
-
-.imgPreview {
-  width: 75px;
-  height: 75px;
+  transition-duration: 0.1s;
+  box-shadow: 0px 0px 10px #5454f3e8;
 }
 
 .sendButton {
-  color: #000;
   text-transform: uppercase;
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
   width: 8%;
   transition-duration: 0.2s;
-  margin: 8px 8px 13px 10px;
+  margin: 1%;
+  padding: 1%;
+  /* margin: 8px 8px 13px 10px; */
   border-radius: 30px;
-  box-shadow: 1px 1px 20px 0 rgb(0 0 0 / 28%);
-  border-color: #00000061;
-  padding-top: 4px;
+  box-shadow: 0px 3px 20px 2px rgb(0 0 0 / 28%);
 }
 .sendButton:hover {
   cursor: pointer;
   color: #4a4aeae8;
-  border-color: #4a4aeae8;
-  transition-duration: 0.2s;
+  box-shadow: 0px 0px 10px #5454f3e8;
+  transition-duration: 0.1s;
 }
 
 @media (max-width: 1200px) {
-  .sendButton {
-    font-size: 70%;
-    margin: 0% 5% 0% 0%;
-    border: none;
-    box-shadow: none;
-    background: none;
+  label {
+    padding: 3%;
+    margin-bottom: 5%;
+    border-radius: 10px;
+  }
+
+  .cancelButton {
+    padding: 3%;
+    margin-bottom: 8%;
+    border-radius: 10px;
   }
 
   .uploadButton {
-    margin: 2% 3% 0% 0%;
     border: none;
-    box-shadow: none;
+    background: none;
+  }
+
+  .sendButton {
+    margin: 2% 4% 2% 1%;
+    border: none;
     background: none;
   }
 
   .fileUpload {
     overflow: hidden;
-    margin: -26%;
-    width: 50%;
+    margin-top: -20%;
+    margin-left: -10%;
+    width: 18%;
     padding: 2%;
   }
 
@@ -152,5 +204,45 @@ select:focus {
 
   .EmojiButton {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .uploadButton {
+    width: 6%;
+    margin: 4% 2% 4% 2%;
+    padding: 0% 8% 0% 0%;
+    border-radius: 30px;
+    transition-duration: 0.2s;
+    box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 28%);
+  }
+
+  .sendButton {
+    width: 6%;
+    margin: 3% 3% 3% 2%;
+    padding: 3% 9% 3% 2%;
+    border-radius: 30px;
+    transition-duration: 0.2s;
+    box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 28%);
+  }
+
+  .fileUpload {
+    overflow: hidden;
+    margin-top: -44%;
+    margin-left: -12%;
+    width: 32%;
+    padding: 2%;
+  }
+  .cancelButton {
+    padding: 2%;
+    margin-bottom: 7%;
+    border-radius: 5px;
+    font-size: 90%;
+  }
+  label {
+    padding: 3%;
+    margin-bottom: 7%;
+    border-radius: 5px;
+    font-size: 90%;
   }
 }

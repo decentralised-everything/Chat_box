@@ -4,23 +4,29 @@ import "./Message.css";
 
 import ReactEmoji from "react-emoji";
 
-const Message = ({ message: { data: {text, image}, user }, name }) => {
+const Message = ({
+  message: {
+    data: { image, text },
+    user,
+  },
+  name,
+}) => {
   let isSentByCurrentUser = false;
   let img = null;
   const trimmedName = name.trim().toLowerCase();
 
   if (user === trimmedName) {
     isSentByCurrentUser = true;
-  } 
+  }
 
-  if(image !== "") {
+  if (image !== "") {
     // make an image element fom a base64 string
-    img = <img src={image} />
+    img = <img src={image} />;
   }
 
   return isSentByCurrentUser ? (
     <div className="messageContainer justifyEnd">
-      <p className="pr-10 sentText">{trimmedName}</p>
+      <p className="pr-5 sentText">{trimmedName}</p>
       <div className="messageBox backgroundBlue">
         {img}
         <p className="messageText colorWhite">{ReactEmoji.emojify(text)}</p>
@@ -32,7 +38,7 @@ const Message = ({ message: { data: {text, image}, user }, name }) => {
         {img}
         <p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
       </div>
-      <p className="pl-10 sentText ">{user}</p>
+      <p className="pl-5 sentText ">{user}</p>
     </div>
   );
 };

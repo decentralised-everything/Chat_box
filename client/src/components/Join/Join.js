@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Particles from "react-particles-js";
 
@@ -25,10 +25,10 @@ export default function SignIn() {
         params={{
           particles: {
             number: {
-              value: 500,
+              value: 1000,
               density: {
                 enable: true,
-                value_area: 2000,
+                value_area: 3000,
               },
             },
             line_linked: {
@@ -77,7 +77,7 @@ export default function SignIn() {
         <div>
           <input
             placeholder="Name"
-            className="joinInput"
+            className="joinInput mt-5 px-5 py-5 border rounded bg-gray-200 text-gray-700 focus:bg-white shadow-lg"
             type="text"
             onChange={(event) => setName(event.target.value)}
           />
@@ -85,7 +85,7 @@ export default function SignIn() {
         <div>
           <input
             placeholder="Room"
-            className="mt-20 joinInput"
+            className="joinInput mt-5 mb-10 px-5 py-5 border rounded bg-gray-200 text-gray-700 focus:bg-white shadow-lg"
             type="text"
             onChange={(event) => setRoom(event.target.value)}
           />
@@ -94,16 +94,26 @@ export default function SignIn() {
           onClick={(e) => (!name || !room ? e.preventDefault() : null)}
           to={`/chat?name=${name}&room=${room}`}
         >
-          <button className={"button mt-20"} type="submit">
+          <button
+            className={
+              "button bg-black hover:bg-transparent text-white border rounded shadow-md "
+            }
+            type="submit"
+          >
             Sign In
           </button>
-          <button
-            className={"toggleParticleButtonJoin"}
-            onClick={particlesHandlerJoin}
-          >
-            Toggle Particles
-          </button>
         </Link>
+        <button
+          className={
+            "toggleParticleButtonJoin bg-black hover:bg-transparent text-white border rounded shadow-md"
+          }
+          onClick={(e) => {
+            particlesHandlerJoin();
+            e.preventDefault();
+          }}
+        >
+          Toggle Particles
+        </button>
       </div>
     </div>
   );

@@ -1,11 +1,9 @@
 .messageBox {
-  background: #f3f3f3;
-  border-radius: 15px;
-  padding: 0px 10px;
+  padding: 1.5%;
   color: white;
   display: inline-block;
-  max-width: 80%;
-  border-radius: 30px;
+  max-width: 60%;
+  border-radius: 12px;
 }
 
 .messageBox > img {
@@ -27,26 +25,18 @@
 
 .messageContainer {
   display: flex;
-  justify-content: flex-end;
-  padding: 2px 3%;
-  margin-top: 3px;
+
+  width: 90%;
+
+  margin-left: 5%;
+  margin-top: 1%;
+  align-items: center;
 }
 
 .sentText {
-  display: flex;
-  align-items: center;
   font-family: monospace;
   color: #828282;
-  letter-spacing: 0.3px;
-  font-size: 13px;
-}
-
-.pl-10 {
-  padding-left: 10px;
-}
-
-.pr-10 {
-  padding-right: 10px;
+  font-size: 90%;
 }
 
 .justifyStart {
@@ -76,5 +66,20 @@
 @media (max-width: 1200px) {
   .messageText {
     font-size: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sentText {
+    padding-right: 3% !important;
+    padding-left: 3% !important;
+  }
+
+  .messageContainer {
+    margin-bottom: 2%;
+  }
+
+  .messageBox {
+    padding: 2.5%;
   }
 }
