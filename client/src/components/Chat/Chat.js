@@ -159,41 +159,6 @@ const Chat = ({ location }) => {
           >
             Toggle Particles
           </button>
-          <button
-            className={"toggleParticleButtonChat"}
-            onClick={(e) => {
-              rightContainerContentHandler();
-              e.preventDefault();
-            }}
-          >
-            Change Content
-          </button>
-        </div>
-      </div>
-    );
-  } else {
-    rightContainerContent = (
-      <div>
-        can add some audience specific animations
-        <div className="buttonContainer">
-          <button
-            className={"toggleParticleButtonChat"}
-            onClick={(e) => {
-              particlesHandlerChat();
-              e.preventDefault();
-            }}
-          >
-            Toggle Particles
-          </button>
-          <button
-            className={"toggleParticleButtonChat"}
-            onClick={(e) => {
-              rightContainerContentHandler();
-              e.preventDefault();
-            }}
-          >
-            Change Content
-          </button>
         </div>
       </div>
     );
