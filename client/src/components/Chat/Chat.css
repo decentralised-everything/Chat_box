@@ -107,8 +107,8 @@ body {
 
 @media (max-width: 1200px) {
   .container {
-    width: 80%;
-    height: 70%;
+    width: 90% !important;
+    height: 80%;
   }
 
   .outerContainer {
@@ -135,7 +135,7 @@ body {
 
 @media (max-width: 800px) {
   .container {
-    width: 80% !important;
+    width: 90% !important;
   }
 
   .navbar {

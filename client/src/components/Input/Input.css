@@ -54,7 +54,7 @@ label:hover {
   z-index: 300;
   position: absolute;
   margin-left: -3%;
-  margin-top: -14%;
+  margin-top: -16%;
   display: flex;
   padding: 1%;
   background: #000000e8;
@@ -184,9 +184,9 @@ label:hover {
 
   .fileUpload {
     overflow: hidden;
-    margin-top: -20%;
-    margin-left: -10%;
-    width: 18%;
+    margin-top: -42%;
+    margin-left: -36%;
+    width: 30%;
     padding: 2%;
   }
 
@@ -228,8 +228,8 @@ label:hover {
 
   .fileUpload {
     overflow: hidden;
-    margin-top: -44%;
-    margin-left: -12%;
+    margin-top: -80%;
+    margin-left: -33%;
     width: 32%;
     padding: 2%;
   }
