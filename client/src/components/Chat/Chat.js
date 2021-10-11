@@ -15,7 +15,7 @@ import MailSharpIcon from "@material-ui/icons/MailSharp";
 
 import "./Chat.css";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://genesis-chat-box.herokuapp.com/";
 
 let socket;
 
@@ -90,7 +90,7 @@ const Chat = ({ location }) => {
         params={{
           particles: {
             number: {
-              value: 700,
+              value: 500,
               density: {
                 enable: true,
                 value_area: 3000,

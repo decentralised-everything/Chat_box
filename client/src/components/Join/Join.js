@@ -25,7 +25,7 @@ export default function SignIn() {
         params={{
           particles: {
             number: {
-              value: 700,
+              value: 500,
               density: {
                 enable: true,
                 value_area: 3000,
@@ -70,14 +70,16 @@ export default function SignIn() {
   }
 
   return (
-    <div className="joinOuterContainer">
-      <div className="particles">{particlesJSXJoin}</div>
-      <div className="joinInnerContainer">
-        <h1 className="heading">Join</h1>
+    <div className="flex justify-center text-center h-full items-center bg-{#5858e3} relative">
+      <div className="z-10 absolute h-full w-full">{particlesJSXJoin}</div>
+      <div className="w-1/3 z-50">
+        <h1 className="heading text-white text-4xl pb-4 border-b-2 border-solid border-white uppercase">
+          Join
+        </h1>
         <div>
           <input
             placeholder="Name"
-            className="joinInput mt-5 px-5 py-5 border rounded bg-gray-200 text-gray-700 focus:bg-white shadow-lg"
+            className="joinInput mt-5 px-5 py-5 border rounded bg-gray-200 text-gray-700 w-full border-none text-base focus:bg-white shadow-lg "
             type="text"
             onChange={(event) => setName(event.target.value)}
           />
@@ -85,7 +87,7 @@ export default function SignIn() {
         <div>
           <input
             placeholder="Room"
-            className="joinInput mt-5 mb-10 px-5 py-5 border rounded bg-gray-200 text-gray-700 focus:bg-white shadow-lg"
+            className="joinInput mt-5 mb-10 px-5 py-5 border rounded bg-gray-200 text-gray-700 w-full border-none text-base focus:bg-white shadow-lg"
             type="text"
             onChange={(event) => setRoom(event.target.value)}
           />
@@ -96,7 +98,7 @@ export default function SignIn() {
         >
           <button
             className={
-              "button bg-black hover:bg-transparent text-white border rounded shadow-md "
+              "button bg-black uppercase p-4 w-full border-black text-lg duration-200 hover:bg-transparent"
             }
             type="submit"
           >
@@ -105,7 +107,7 @@ export default function SignIn() {
         </Link>
         <button
           className={
-            "toggleParticleButtonJoin bg-black hover:bg-transparent text-white border rounded shadow-md"
+            "toggleParticleButtonJoin w-3/5 bg-black uppercase p-3 border-black duration-200 text-sm hover:bg-transparent"
           }
           onClick={(e) => {
             particlesHandlerJoin();

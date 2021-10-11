@@ -15,86 +15,39 @@ body {
   box-sizing: border-box;
 }
 
-.particles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -100;
-}
-
-.joinOuterContainer {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
-  align-items: center;
-  background-color: #5858e3;
-  position: relative;
-  z-index: 100;
-}
-
-.joinInnerContainer {
-  width: 30%;
-}
-
 .heading {
-  color: white;
-  font-size: 2.5em;
-  padding-bottom: 10px;
-  border-bottom: 2px solid white;
-  text-transform: uppercase;
   animation: Slide_up 2s ease;
 }
 
 .joinInput {
-  width: 100%;
-  border: none;
-  font-size: 15px;
   animation: Slide_up 2.1s ease;
 }
 
 .button {
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #000000;
-  padding: 15px;
-  display: inline-block;
-  border-color: #000000;
-  width: 100%;
-  transition-duration: 0.25s;
-  font-size: 17px;
-  letter-spacing: 8px;
-  border-width: 2px;
   animation: Slide_up 2.2s ease;
+  letter-spacing: 6px;
+  color: white;
 }
 .button:hover {
-  background: none;
   transition-duration: 0.25 s;
+  border: solid;
   color: black;
+  border-width: 2px;
   border-color: white;
   border-radius: 15px;
   box-shadow: 1px 1px 20px #0000006b;
 }
 
 .toggleParticleButtonJoin {
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #000000;
-  padding: 12px;
-  padding-right: 0;
-  border-color: transparent;
-  width: 60%;
-  transition-duration: 0.25s;
-  font-size: 14px;
   letter-spacing: 5px;
   margin-top: 5%;
   animation: Slide_up 2.3s ease;
+  color: white;
 }
 .toggleParticleButtonJoin:hover {
-  background: none;
   transition-duration: 0.25 s;
+  border: solid;
+  border-width: 2px;
   color: black;
   border-color: white;
   border-radius: 15px;
